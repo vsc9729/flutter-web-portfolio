@@ -49,6 +49,12 @@ dependencies:
   video_player: ^2.8.2
   shared_preferences: ^2.2.2
   just_audio: ^0.9.36
+  lottie: ^3.1.2
+  cached_network_image: ^3.4.1
+  flutter_animate: ^4.5.0
+  defer_pointer: ^0.0.2
+  neopop: ^1.0.2
+  visibility_detector: ^0.4.0+2
 
 dev_dependencies:
   flutter_test:
@@ -77,6 +83,8 @@ flutter:
     - dotenv
     - assets/images/
     - assets/audio/
+    - assets/resume/
+    - assets/lottie/
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware
