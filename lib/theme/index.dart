@@ -1,11 +1,15 @@
 // Light Theme
 import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
+
+class AppFonts {
+  static String roboto = "Roboto";
+  static String poppins = "Poppins";
+}
 
 class AppThemes {
   static ThemeData lightTheme = ThemeData(
       scaffoldBackgroundColor: Colors.white,
-      fontFamily: "Roboto",
+      fontFamily: AppFonts.roboto,
       appBarTheme: const AppBarTheme(
         backgroundColor: Colors
             .blue, // You can customize the app bar color in the light theme
@@ -25,7 +29,7 @@ class AppThemes {
 // Dark Theme
   static ThemeData darkTheme = ThemeData(
       scaffoldBackgroundColor: Colors.black,
-      fontFamily: "Roboto",
+      fontFamily: AppFonts.roboto,
       appBarTheme: AppBarTheme(
         backgroundColor: Colors
             .grey[900], // You can customize the app bar color in the dark theme

@@ -60,6 +60,81 @@
       height: 100vh;
       width: 100vw;
     }
+    *,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+html {
+  box-sizing: border-box;
+}
+
+body {
+  height: 100vh;
+}
+
+.container {
+  display: grid;
+  place-items: center;
+  height: 100%;
+  padding: 10%;
+  background: rgba(0, 0, 0, 0);
+}
+
+.loader {
+  width: 30vh;
+  aspect-ratio: 1/1;
+  position: relative;
+}
+
+.dot {
+  margin: auto;
+  aspect-ratio: 1/1;
+  border-radius: 50%;
+  position: absolute;
+  inset: 0;
+  background: #4fc3f7;
+  box-shadow: 2px 4px 10px 3px rgba(0, 0, 0, 0.2);
+  animation: 2s ease infinite alternate;
+}
+.dot-lower {
+  width: 30vh;
+  animation-name: lower;
+}
+.dot-middle {
+  width: 20vh;
+  animation-name: middle;
+}
+.dot-upper {
+  width: 10vh;
+  animation-name: upper;
+}
+
+@keyframes lower {
+  0%, 30% {
+    scale: 0;
+  }
+  100% {
+    scale: 1;
+  }
+}
+@keyframes middle {
+  0%, 50% {
+    scale: 0;
+  }
+  100% {
+    scale: 1;
+  }
+}
+@keyframes upper {
+  0%, 70% {
+    scale: 0;
+  }
+  100% {
+    scale: 1;
+  }
+}
     .main-content {
       height: 100%;
       width: 100%;
@@ -109,7 +184,13 @@
     });
   </script>
   <div class = "main-content" id = "loader-content">
-    <img src="Toaster.gif" alt="Loading Gif"/>
+    <div class="container">
+      <div class="loader">
+        <div class="dot dot-lower"></div>
+        <div class="dot dot-middle"></div>
+        <div class="dot dot-upper"></div>
+      </div>
+    </div>
   </div>
 </body>
 </html>
