@@ -56,7 +56,7 @@ class _AboutMeState extends State<AboutMe> {
                       child: Center(
                         child: CircleAvatar(
                           radius: 132.5.h,
-                          backgroundImage: const AssetImage(
+                          backgroundImage: const NetworkImage(
                             CommonImageAssets.profileImageZoomed,
                           ),
                         ),
@@ -95,7 +95,7 @@ class _AboutMeState extends State<AboutMe> {
                 child: Center(
                   child: CircleAvatar(
                     radius: 92.5.h,
-                    backgroundImage: const AssetImage(
+                    backgroundImage: const NetworkImage(
                       CommonImageAssets.profileImageZoomed,
                     ),
                   ),
@@ -157,7 +157,7 @@ class _AboutMeState extends State<AboutMe> {
           crossAxisAlignment: CrossAxisAlignment.start,
           mainAxisAlignment: MainAxisAlignment.start,
           children: [
-            Image.asset(
+            Image.network(
               themeState is DarkTheme
                   ? CommonImageAssets.expDark
                   : CommonImageAssets.expLight,
@@ -166,7 +166,7 @@ class _AboutMeState extends State<AboutMe> {
             SizedBox(
               height: 12.h,
             ),
-            Image.asset(
+            Image.network(
               themeState is DarkTheme
                   ? CommonImageAssets.eduDark
                   : CommonImageAssets.eduLight,
@@ -296,8 +296,8 @@ class _AboutMeState extends State<AboutMe> {
                             ),
                             Transform.translate(
                               offset: Offset(0.0, 6.0.h),
-                              child: LottieBuilder.asset(
-                                "assets/lottie/red_underline.json",
+                              child: LottieBuilder.network(
+                                CommonLottieAssets.redUnderline,
                                 repeat: false,
                                 frameRate: FrameRate.max,
                                 height: 100.h,

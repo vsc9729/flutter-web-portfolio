@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:lottie/lottie.dart';
+import 'package:portfolio/constants/common_assets.dart';
 import 'package:portfolio/theme/index.dart';
 import 'package:portfolio/utils/common_util.dart';
 import 'package:url_launcher/url_launcher.dart';
@@ -141,8 +142,8 @@ class ContactMe extends StatelessWidget {
                                                     Orientation.landscape
                                                 ? -30.h
                                                 : -25.h),
-                                        child: LottieBuilder.asset(
-                                          "assets/lottie/underline.json",
+                                        child: LottieBuilder.network(
+                                          CommonLottieAssets.underline,
                                           repeat: false,
                                           frameRate: FrameRate.max,
                                           height: 100.h,

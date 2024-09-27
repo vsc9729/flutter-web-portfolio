@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:portfolio/bloc/theme/theme_bloc.dart';
+import 'package:portfolio/constants/common_assets.dart';
 import 'package:portfolio/main.dart';
 import 'package:portfolio/theme/index.dart';
 import 'package:portfolio/utils/page_scroll_physics.dart';
@@ -418,10 +419,12 @@ class _ProjectsState extends State<Projects>
                                                         Matrix4.identity()
                                                           ..scale(1.15, 1.15)
                                                           ..translate(0, 35.sp),
-                                                    child: Image.asset(
+                                                    child: Image.network(
                                                       themeState is DarkTheme
-                                                          ? "assets/images/portfolio_dark.png"
-                                                          : "assets/images/portfolio_light.png",
+                                                          ? CommonImageAssets
+                                                              .portfolioDark
+                                                          : CommonImageAssets
+                                                              .portfolioLight,
                                                       height: 2300.sp,
                                                     ),
                                                   ),
@@ -449,10 +452,12 @@ class _ProjectsState extends State<Projects>
                                                     opacity:
                                                         secondAnimationController!
                                                             .value,
-                                                    child: Image.asset(
+                                                    child: Image.network(
                                                       themeState is DarkTheme
-                                                          ? "assets/images/high_low_game_demo_dark.png"
-                                                          : "assets/images/high_low_game_demo.png",
+                                                          ? CommonImageAssets
+                                                              .highLowGameDemoDark
+                                                          : CommonImageAssets
+                                                              .highLowGameDemoLight,
                                                       height: 2300.sp,
                                                     ),
                                                   ),
@@ -481,10 +486,12 @@ class _ProjectsState extends State<Projects>
                                                         Matrix4.identity()
                                                           ..scale(1.15, 1.15)
                                                           ..translate(0, 35.sp),
-                                                    child: Image.asset(
+                                                    child: Image.network(
                                                       themeState is DarkTheme
-                                                          ? "assets/images/tawk_demo_dark.png"
-                                                          : "assets/images/tawk_demo.png",
+                                                          ? CommonImageAssets
+                                                              .tawkDemoDark
+                                                          : CommonImageAssets
+                                                              .tawkDemoLight,
                                                       height: 2300.sp,
                                                     ),
                                                   ),
@@ -797,11 +804,13 @@ class _ProjectsState extends State<Projects>
                                                                     1.35, 1.35)
                                                                 ..translate(
                                                                     0, 55.h),
-                                                          child: Image.asset(
+                                                          child: Image.network(
                                                             themeState
                                                                     is DarkTheme
-                                                                ? "assets/images/portfolio_dark.png"
-                                                                : "assets/images/portfolio_light.png",
+                                                                ? CommonImageAssets
+                                                                    .portfolioDark
+                                                                : CommonImageAssets
+                                                                    .portfolioLight,
                                                             height: 1350.h,
                                                           ),
                                                         ),
@@ -849,11 +858,13 @@ class _ProjectsState extends State<Projects>
                                                                 ..translate(
                                                                     0, 55.h),
                                                               child:
-                                                                  Image.asset(
+                                                                  Image.network(
                                                                 themeState
                                                                         is DarkTheme
-                                                                    ? "assets/images/high_low_game_demo_dark.png"
-                                                                    : "assets/images/high_low_game_demo.png",
+                                                                    ? CommonImageAssets
+                                                                        .highLowGameDemoDark
+                                                                    : CommonImageAssets
+                                                                        .highLowGameDemoLight,
                                                                 height: 1350.h,
                                                               ),
                                                             ),
@@ -899,11 +910,13 @@ class _ProjectsState extends State<Projects>
                                                                 ..translate(
                                                                     0, 55.h),
                                                               child:
-                                                                  Image.asset(
+                                                                  Image.network(
                                                                 themeState
                                                                         is DarkTheme
-                                                                    ? "assets/images/tawk_demo_dark.png"
-                                                                    : "assets/images/tawk_demo.png",
+                                                                    ? CommonImageAssets
+                                                                        .tawkDemoDark
+                                                                    : CommonImageAssets
+                                                                        .tawkDemoLight,
                                                                 height: 1350.h,
                                                               ),
                                                             ),

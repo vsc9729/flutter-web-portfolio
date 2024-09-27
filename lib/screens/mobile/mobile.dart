@@ -184,7 +184,7 @@ class _MobileWidgetState extends State<MobileWidget>
                             child: child,
                           );
                         },
-                        child: Image.asset(
+                        child: Image.network(
                             MediaQuery.of(context).orientation ==
                                     Orientation.landscape
                                 ? CommonImageAssets.mobile
@@ -316,7 +316,7 @@ class _HomeScreenState extends State<HomeScreen>
                                     borderRadius: BorderRadius.circular(9999),
                                   ),
                                   child: Center(
-                                    child: SvgPicture.asset(
+                                    child: SvgPicture.network(
                                       CommonImageAssets.youtube,
                                       height: 36.h,
                                     ),
@@ -340,7 +340,7 @@ class _HomeScreenState extends State<HomeScreen>
                                   borderRadius: BorderRadius.circular(9999),
                                 ),
                                 child: Center(
-                                  child: SvgPicture.asset(
+                                  child: SvgPicture.network(
                                     CommonImageAssets.github,
                                     height: 28.8.h,
                                   ),
@@ -363,7 +363,7 @@ class _HomeScreenState extends State<HomeScreen>
                                   borderRadius: BorderRadius.circular(9999),
                                 ),
                                 child: Center(
-                                  child: SvgPicture.asset(
+                                  child: SvgPicture.network(
                                     CommonImageAssets.linkedin,
                                     height: 33.6.h,
                                   ),
@@ -386,7 +386,7 @@ class _HomeScreenState extends State<HomeScreen>
                                   borderRadius: BorderRadius.circular(9999),
                                 ),
                                 child: Center(
-                                  child: SvgPicture.asset(
+                                  child: SvgPicture.network(
                                     CommonImageAssets.hackerrank,
                                     height: 33.6.h,
                                   ),
@@ -582,8 +582,8 @@ class _HomeScreenState extends State<HomeScreen>
                                       borderRadius: BorderRadius.circular(9999),
                                     ),
                                     child: Center(
-                                      child: Image.asset(
-                                        "assets/images/tawk-sitelogo.png",
+                                      child: Image.network(
+                                        CommonImageAssets.tawkSiteLogo,
                                         height: 27.6.h,
                                       ),
                                     ),
@@ -631,8 +631,8 @@ class _HomeScreenState extends State<HomeScreen>
                                         shape: BoxShape.circle,
                                       ),
                                       child: Center(
-                                        child: Image.asset(
-                                          "assets/images/game_icon.png",
+                                        child: Image.network(
+                                          CommonImageAssets.highLowGameMenuIcon,
                                           height: 27.6.h,
                                         ),
                                       ),
@@ -1007,14 +1007,14 @@ class _HighLowGameState extends State<HighLowGame>
                         child: child),
                   );
                 },
-                child: Image.asset(
-                  "assets/images/game_start.png",
+                child: Image.network(
+                  CommonImageAssets.gameStart,
                   height: 280.h,
                 ),
               ),
               Center(
-                child: Image.asset(
-                  "assets/images/rating_title.png",
+                child: Image.network(
+                  CommonImageAssets.gameRatingTitle,
                   height: 75.h,
                 ),
               ),
@@ -1094,8 +1094,8 @@ class _HighLowGameState extends State<HighLowGame>
                             return Transform(
                               transform: Matrix4.identity()
                                 ..translate(0, -70.h),
-                              child: LottieBuilder.asset(
-                                "assets/lottie/game_loading.json",
+                              child: LottieBuilder.network(
+                                CommonLottieAssets.highLowGameLoading,
                                 height: 200.h,
                               ),
                             );
@@ -1683,8 +1683,8 @@ class _HighLowGameEndScreenState extends State<HighLowGameEndScreen>
                     child: child,
                   );
                 },
-                child: Image.asset(
-                  "assets/images/game_over.png",
+                child: Image.network(
+                  CommonImageAssets.gameOver,
                   height: 200.h,
                 ),
               ),
