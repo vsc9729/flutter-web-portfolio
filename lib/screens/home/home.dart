@@ -26,7 +26,7 @@ class _MyHomePageState extends State<MyHomePage>
     with SingleTickerProviderStateMixin, AutomaticKeepAliveClientMixin {
   late AnimationController animationController;
   late PageController websitePageController;
-  late ValueNotifier pageNotifier = ValueNotifier(0);
+  late ValueNotifier<double> pageNotifier = ValueNotifier(0.0);
 
   @override
   bool get wantKeepAlive => true;
@@ -106,7 +106,7 @@ class _MyHomePageState extends State<MyHomePage>
                                     ),
                                     child: Opacity(
                                       opacity: _calculateOpacity(
-                                          0, pageNotifier.value),
+                                          0.0, pageNotifier.value),
                                       child: Center(
                                         child: Column(
                                           mainAxisAlignment:
@@ -444,7 +444,7 @@ class _MyHomePageState extends State<MyHomePage>
                                     return Transform(
                                       transform: Matrix4.identity()
                                         ..translate(
-                                            0, -animationController.value),
+                                            0.0, -animationController.value),
                                       child: Opacity(
                                         opacity: animationController.value / 7,
                                         child: child,
@@ -479,7 +479,7 @@ class _MyHomePageState extends State<MyHomePage>
                               )),
                               child: Opacity(
                                 opacity:
-                                    _calculateOpacity(1, pageNotifier.value),
+                                    _calculateOpacity(1.0, pageNotifier.value),
                                 child: AboutMe(
                                   pageController: websitePageController,
                                 ),
@@ -488,13 +488,13 @@ class _MyHomePageState extends State<MyHomePage>
                           },
                         ),
                         Opacity(
-                          opacity: _calculateOpacity(2, pageNotifier.value),
+                          opacity: _calculateOpacity(2.0, pageNotifier.value),
                           child: Projects(
                             websitePageController: websitePageController,
                           ),
                         ),
                         Opacity(
-                          opacity: _calculateOpacity(3, pageNotifier.value),
+                          opacity: _calculateOpacity(3.0, pageNotifier.value),
                           child: Listener(
                             onPointerSignal: (event) {
                               if (event is PointerScrollEvent) {

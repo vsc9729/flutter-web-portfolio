@@ -25,4 +25,11 @@ class CommonUtil {
       return fontSize * 0.45;
     }
   }
+
+  static double deviceBasedValues(
+      BuildContext context, double landscape, double portrait) {
+    return MediaQuery.of(context).orientation == Orientation.landscape
+        ? landscape
+        : portrait;
+  }
 }

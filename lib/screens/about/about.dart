@@ -8,6 +8,7 @@ import 'package:neopop/widgets/buttons/neopop_button/neopop_button.dart';
 import 'package:portfolio/bloc/theme/theme_bloc.dart';
 import 'package:portfolio/constants/common_assets.dart';
 import 'package:portfolio/main.dart';
+import 'package:portfolio/screens/about/widgets/skill_tile.dart';
 import 'package:portfolio/theme/index.dart';
 import 'package:portfolio/utils/common_util.dart';
 import 'package:url_launcher/url_launcher.dart';
@@ -462,63 +463,7 @@ class _AboutMeState extends State<AboutMe> {
       SizedBox(
         height: 40.h,
       ),
-      Align(
-        alignment: Alignment.centerLeft,
-        child: Wrap(
-          spacing: 15.r,
-          runSpacing: 10.r,
-          children: const [
-            SkillTile(
-              tileColor: Color(0xff00ADD8),
-              tileText: "Flutter",
-            ),
-            SkillTile(
-              tileColor: Color(0xff234A84),
-              tileText: "BLoC",
-            ),
-            SkillTile(
-              tileColor: Color(0xff61DAF6),
-              tileText: "Dart",
-            ),
-            SkillTile(
-              tileColor: Color(0xffFF9900),
-              tileText: "GraphQL",
-            ),
-            SkillTile(
-              tileColor: Color(0xff4285F4),
-              tileText: "Android",
-            ),
-            SkillTile(
-              tileColor: Color(0xff326CE5),
-              tileText: "iOS",
-            ),
-            SkillTile(
-              tileColor: Color(0xff0DB7ED),
-              tileText: "API Integration",
-            ),
-            SkillTile(
-              tileColor: Color(0xff7B42BC),
-              tileText: "CI/CD",
-            ),
-            SkillTile(
-              tileColor: Color(0xff199BFC),
-              tileText: "Provider",
-            ),
-            SkillTile(
-              tileColor: Color(0xffD82C20),
-              tileText: "Firebase",
-            ),
-            SkillTile(
-              tileColor: Color(0xffE535AB),
-              tileText: "Git",
-            ),
-            SkillTile(
-              tileColor: Color(0xff68A063),
-              tileText: "MVVM",
-            ),
-          ],
-        ),
-      ),
+      const BottomSkillsRow(),
     ];
   }
 
@@ -620,55 +565,68 @@ class _AboutMeState extends State<AboutMe> {
   }
 }
 
-// Text(
-//                                                   "About Me",
-//                                                   style: TextStyle(
-//                                                     fontSize: 70.h,
-//                                                     fontWeight: FontWeight.w800,
-//                                                   ),
-//                                                 ),
-//                                                 SizedBox(
-//                                                   height: 80.h,
-//                                                 ),
-class SkillTile extends StatelessWidget {
-  final Color tileColor;
-  final String tileText;
-  const SkillTile({
+class BottomSkillsRow extends StatelessWidget {
+  const BottomSkillsRow({
     super.key,
-    required this.tileColor,
-    required this.tileText,
   });
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      decoration: BoxDecoration(
-        color: tileColor,
-        borderRadius: BorderRadius.circular(
-          5.r,
-        ),
-      ),
-      child: Padding(
-        padding: EdgeInsets.symmetric(
-          horizontal:
-              MediaQuery.of(context).orientation == Orientation.landscape
-                  ? 16.sp
-                  : 32.sp,
-          vertical: MediaQuery.of(context).orientation == Orientation.landscape
-              ? 6.sp
-              : 12.sp,
-        ),
-        child: Text(
-          tileText,
-          style: TextStyle(
-            fontSize:
-                MediaQuery.of(context).orientation == Orientation.landscape
-                    ? 15.sp
-                    : 45.sp,
-            fontWeight: FontWeight.w400,
-            color: Colors.white,
+    return Align(
+      alignment: Alignment.centerLeft,
+      child: Wrap(
+        spacing: 15.r,
+        runSpacing: 10.r,
+        children: const [
+          SkillTile(
+            tileColor: Color(0xff00ADD8),
+            tileText: "Flutter",
           ),
-        ),
+          SkillTile(
+            tileColor: Color(0xff234A84),
+            tileText: "BLoC",
+          ),
+          SkillTile(
+            tileColor: Color(0xff61DAF6),
+            tileText: "Dart",
+          ),
+          SkillTile(
+            tileColor: Color(0xffFF9900),
+            tileText: "GraphQL",
+          ),
+          SkillTile(
+            tileColor: Color(0xff4285F4),
+            tileText: "Android",
+          ),
+          SkillTile(
+            tileColor: Color(0xff326CE5),
+            tileText: "iOS",
+          ),
+          SkillTile(
+            tileColor: Color(0xff0DB7ED),
+            tileText: "API Integration",
+          ),
+          SkillTile(
+            tileColor: Color(0xff7B42BC),
+            tileText: "CI/CD",
+          ),
+          SkillTile(
+            tileColor: Color(0xff199BFC),
+            tileText: "Provider",
+          ),
+          SkillTile(
+            tileColor: Color(0xffD82C20),
+            tileText: "Firebase",
+          ),
+          SkillTile(
+            tileColor: Color(0xffE535AB),
+            tileText: "Git",
+          ),
+          SkillTile(
+            tileColor: Color(0xff68A063),
+            tileText: "MVVM",
+          ),
+        ],
       ),
     );
   }

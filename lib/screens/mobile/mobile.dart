@@ -113,11 +113,11 @@ class _MobileWidgetState extends State<MobileWidget>
                                         (MediaQuery.of(context).orientation ==
                                                 Orientation.landscape
                                             ? 45.5.sp
-                                            : 0))),
+                                            : 0.0))),
                                     MediaQuery.of(context).orientation ==
                                             Orientation.landscape
                                         ? 55.sp
-                                        : 0),
+                                        : 0.0),
                               child: child,
                             ),
                           );
@@ -171,7 +171,7 @@ class _MobileWidgetState extends State<MobileWidget>
                             MediaQuery.of(context).orientation ==
                                     Orientation.landscape
                                 ? 100.sp
-                                : 0),
+                                : 0.0),
                       child: AnimatedBuilder(
                         animation: opacityController,
                         builder: (context, child) {
@@ -276,8 +276,8 @@ class _HomeScreenState extends State<HomeScreen>
             children: [
               Padding(
                 padding: EdgeInsets.symmetric(
-                  horizontal: 15.sp,
-                  vertical: 15.sp,
+                  horizontal: 15.h,
+                  vertical: 15.h,
                 ),
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.start,
@@ -403,7 +403,7 @@ class _HomeScreenState extends State<HomeScreen>
                           builder: (context, child) {
                             return Transform(
                               transform: Matrix4.identity()
-                                ..translate(0, -animationController.value),
+                                ..translate(0.0, -animationController.value),
                               child: Opacity(
                                 opacity: animationController.value / 7,
                                 child: child,
@@ -1001,7 +1001,7 @@ class _HighLowGameState extends State<HighLowGame>
                 builder: (context, child) {
                   return Transform(
                     transform: Matrix4.identity()
-                      ..translate(0, -animationController.value),
+                      ..translate(0.0, -animationController.value),
                     child: Opacity(
                         opacity: 1 - (-(animationController.value / 100)),
                         child: child),
@@ -1093,7 +1093,7 @@ class _HighLowGameState extends State<HighLowGame>
                           } else {
                             return Transform(
                               transform: Matrix4.identity()
-                                ..translate(0, -70.h),
+                                ..translate(0.0, -70.h),
                               child: LottieBuilder.network(
                                 CommonLottieAssets.highLowGameLoading,
                                 height: 200.h,

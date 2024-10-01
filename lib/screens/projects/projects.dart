@@ -7,6 +7,7 @@ import 'package:portfolio/constants/common_assets.dart';
 import 'package:portfolio/main.dart';
 import 'package:portfolio/theme/index.dart';
 import 'package:portfolio/utils/page_scroll_physics.dart';
+import 'package:url_launcher/url_launcher.dart';
 import 'package:visibility_detector/visibility_detector.dart';
 
 class Projects extends StatefulWidget {
@@ -175,223 +176,340 @@ class _ProjectsState extends State<Projects>
                                           const Spacer(),
                                           Expanded(
                                             flex: 2,
-                                            child: Center(
-                                              child: (index == 0)
-                                                  ? VisibilityDetector(
-                                                      key: const Key(
-                                                          "portfolio"),
-                                                      onVisibilityChanged:
-                                                          (info) {
-                                                        visibilityValueOne
-                                                                .value =
-                                                            info.visibleFraction;
-                                                      },
-                                                      child: Column(
-                                                        children: [
-                                                          const Spacer(),
-                                                          Expanded(
-                                                            child:
-                                                                ValueListenableBuilder(
-                                                              valueListenable:
-                                                                  visibilityValueOne,
-                                                              builder: (context,
-                                                                  value,
-                                                                  child) {
-                                                                return Opacity(
-                                                                  opacity:
-                                                                      visibilityValueOne
-                                                                          .value,
-                                                                  child: Column(
-                                                                    mainAxisAlignment:
-                                                                        MainAxisAlignment
-                                                                            .center,
-                                                                    crossAxisAlignment:
-                                                                        CrossAxisAlignment
-                                                                            .start,
-                                                                    children: [
-                                                                      Text(
-                                                                        "Portfolio",
-                                                                        style:
-                                                                            TextStyle(
-                                                                          fontSize:
-                                                                              50.sp,
-                                                                          fontWeight:
-                                                                              FontWeight.w600,
-                                                                        ),
-                                                                        textAlign:
-                                                                            TextAlign.left,
-                                                                      ),
-                                                                      SizedBox(
-                                                                        height:
-                                                                            10.sp,
-                                                                      ),
-                                                                      Text(
-                                                                        "The portfolio website that you are currently on is made using Flutter and Dart. It is a responsive website that works on all devices. The website is hosted on Firebase Hosting. The website is made using the BLoC pattern.",
-                                                                        textAlign:
-                                                                            TextAlign.left,
-                                                                        style:
-                                                                            TextStyle(
-                                                                          fontSize:
-                                                                              25.sp,
-                                                                          fontWeight:
-                                                                              FontWeight.w500,
-                                                                          fontFamily:
-                                                                              AppFonts.poppins,
-                                                                          color: Theme.of(context)
-                                                                              .textTheme
-                                                                              .bodyMedium!
-                                                                              .color!
-                                                                              .withOpacity(0.5),
-                                                                        ),
-                                                                      ),
-                                                                    ],
-                                                                  ),
-                                                                );
-                                                              },
-                                                            ),
-                                                          ),
-                                                          const Spacer(),
-                                                        ],
-                                                      ),
-                                                    )
-                                                  : index == 1
-                                                      ? VisibilityDetector(
-                                                          key: const Key(
-                                                              "HighLow"),
-                                                          onVisibilityChanged:
-                                                              (info) {
-                                                            visibilityValueTwo
-                                                                    .value =
-                                                                info.visibleFraction;
-                                                          },
-                                                          child: Column(
-                                                            children: [
-                                                              const Spacer(),
-                                                              Expanded(
-                                                                child:
-                                                                    ValueListenableBuilder(
-                                                                  valueListenable:
-                                                                      visibilityValueTwo,
-                                                                  builder:
-                                                                      (context,
-                                                                          value,
-                                                                          child) {
-                                                                    return Opacity(
-                                                                      opacity:
-                                                                          visibilityValueTwo
-                                                                              .value,
-                                                                      child:
-                                                                          Column(
-                                                                        mainAxisAlignment:
-                                                                            MainAxisAlignment.center,
-                                                                        crossAxisAlignment:
-                                                                            CrossAxisAlignment.start,
-                                                                        children: [
-                                                                          Text(
-                                                                            "High Low Game",
+                                            child: (index == 0)
+                                                ? VisibilityDetector(
+                                                    key: const Key("portfolio"),
+                                                    onVisibilityChanged:
+                                                        (info) {
+                                                      visibilityValueOne.value =
+                                                          info.visibleFraction;
+                                                    },
+                                                    child: Column(
+                                                      children: [
+                                                        const Spacer(),
+                                                        Expanded(
+                                                          child:
+                                                              ValueListenableBuilder(
+                                                            valueListenable:
+                                                                visibilityValueOne,
+                                                            builder: (context,
+                                                                value, child) {
+                                                              return Opacity(
+                                                                opacity:
+                                                                    visibilityValueOne
+                                                                        .value,
+                                                                child: Column(
+                                                                  mainAxisAlignment:
+                                                                      MainAxisAlignment
+                                                                          .end,
+                                                                  crossAxisAlignment:
+                                                                      CrossAxisAlignment
+                                                                          .start,
+                                                                  children: [
+                                                                    Row(
+                                                                      crossAxisAlignment:
+                                                                          CrossAxisAlignment
+                                                                              .end,
+                                                                      mainAxisAlignment:
+                                                                          MainAxisAlignment
+                                                                              .start,
+                                                                      children: [
+                                                                        FittedBox(
+                                                                          child:
+                                                                              Text(
+                                                                            "Portfolio",
                                                                             style:
                                                                                 TextStyle(
+                                                                              height: 0.8,
                                                                               fontSize: 50.sp,
                                                                               fontWeight: FontWeight.w600,
                                                                             ),
                                                                             textAlign:
                                                                                 TextAlign.left,
                                                                           ),
-                                                                          SizedBox(
+                                                                        ),
+                                                                        SizedBox(
+                                                                          width:
+                                                                              2.sp,
+                                                                        ),
+                                                                        OutlinedButton(
+                                                                          style:
+                                                                              ButtonStyle(
+                                                                            shape:
+                                                                                WidgetStateProperty.all(
+                                                                              const CircleBorder(),
+                                                                            ),
+                                                                            overlayColor:
+                                                                                WidgetStateProperty.all(
+                                                                              Colors.transparent,
+                                                                            ),
+                                                                            padding:
+                                                                                WidgetStateProperty.all(
+                                                                              EdgeInsets.zero,
+                                                                            ),
+                                                                          ),
+                                                                          onPressed:
+                                                                              () {
+                                                                            launchUrl(Uri.parse(
+                                                                              "https://github.com/vsc9729/flutter-web-portfolio",
+                                                                            ));
+                                                                          },
+                                                                          child:
+                                                                              Image.network(
+                                                                            "https://img.icons8.com/material-outlined/48/external-link.png",
                                                                             height:
-                                                                                10.sp,
+                                                                                20.sp,
                                                                           ),
-                                                                          Text(
-                                                                            "I developed a Higher-Lower game in Flutter where players guess which of two TV shows has a higher IMDb rating. The game pulls data from an API that features the top 500 most famous TV shows, ensuring a dynamic and engaging experience. With an intuitive user interface and real-time feedback, players enjoy seamless gameplay while tracking their scores.",
-                                                                            textAlign:
-                                                                                TextAlign.left,
-                                                                            style:
-                                                                                TextStyle(
-                                                                              fontSize: 25.sp,
-                                                                              fontWeight: FontWeight.w500,
-                                                                              fontFamily: AppFonts.poppins,
-                                                                              color: Theme.of(context).textTheme.bodyMedium!.color!.withOpacity(0.5),
-                                                                            ),
-                                                                          ),
-                                                                        ],
+                                                                        ),
+                                                                      ],
+                                                                    ),
+                                                                    SizedBox(
+                                                                      height:
+                                                                          10.sp,
+                                                                    ),
+                                                                    Text(
+                                                                      "The portfolio website that you are currently on is made using Flutter and Dart. It is a responsive website that works on all devices. The website is hosted on Firebase Hosting. The website is made using the BLoC pattern.",
+                                                                      textAlign:
+                                                                          TextAlign
+                                                                              .left,
+                                                                      style:
+                                                                          TextStyle(
+                                                                        fontSize:
+                                                                            25.sp,
+                                                                        fontWeight:
+                                                                            FontWeight.w500,
+                                                                        fontFamily:
+                                                                            AppFonts.poppins,
+                                                                        color: Theme.of(context)
+                                                                            .textTheme
+                                                                            .bodyMedium!
+                                                                            .color!
+                                                                            .withOpacity(0.5),
                                                                       ),
-                                                                    );
-                                                                  },
+                                                                    ),
+                                                                  ],
                                                                 ),
-                                                              ),
-                                                              const Spacer(),
-                                                            ],
-                                                          ),
-                                                        )
-                                                      : VisibilityDetector(
-                                                          key: const Key(
-                                                              "portfolio"),
-                                                          onVisibilityChanged:
-                                                              (info) {
-                                                            visibilityValueThree
-                                                                    .value =
-                                                                info.visibleFraction;
-                                                          },
-                                                          child: Column(
-                                                            children: [
-                                                              const Spacer(),
-                                                              Expanded(
-                                                                child:
-                                                                    ValueListenableBuilder(
-                                                                  valueListenable:
-                                                                      visibilityValueThree,
-                                                                  builder:
-                                                                      (context,
-                                                                          value,
-                                                                          child) {
-                                                                    return Opacity(
-                                                                      opacity:
-                                                                          visibilityValueThree
-                                                                              .value,
-                                                                      child:
-                                                                          Column(
-                                                                        mainAxisAlignment:
-                                                                            MainAxisAlignment.center,
-                                                                        crossAxisAlignment:
-                                                                            CrossAxisAlignment.start,
-                                                                        children: [
-                                                                          Text(
-                                                                            "ChatBot using Tawk",
-                                                                            style:
-                                                                                TextStyle(
-                                                                              fontSize: 50.sp,
-                                                                              fontWeight: FontWeight.w600,
-                                                                            ),
-                                                                            textAlign:
-                                                                                TextAlign.left,
-                                                                          ),
-                                                                          SizedBox(
-                                                                            height:
-                                                                                10.sp,
-                                                                          ),
-                                                                          Text(
-                                                                            "I developed a chatbot using Tawk.to, a popular chatbot service. The chatbot is integrated into the website/app and provides real-time customer support. The chatbot is highly customizable and can be tailored to suit the needs of the business. The chatbot is easy to use and provides a seamless experience for customers.",
-                                                                            textAlign:
-                                                                                TextAlign.left,
-                                                                            style:
-                                                                                TextStyle(
-                                                                              fontSize: 25.sp,
-                                                                              fontFamily: AppFonts.poppins,
-                                                                              fontWeight: FontWeight.w500,
-                                                                              color: Theme.of(context).textTheme.bodyMedium!.color!.withOpacity(0.5),
-                                                                            ),
-                                                                          ),
-                                                                        ],
-                                                                      ),
-                                                                    );
-                                                                  },
-                                                                ),
-                                                              ),
-                                                              const Spacer(),
-                                                            ],
+                                                              );
+                                                            },
                                                           ),
                                                         ),
-                                            ),
+                                                        const Spacer(),
+                                                      ],
+                                                    ),
+                                                  )
+                                                : index == 1
+                                                    ? VisibilityDetector(
+                                                        key: const Key(
+                                                            "HighLow"),
+                                                        onVisibilityChanged:
+                                                            (info) {
+                                                          visibilityValueTwo
+                                                                  .value =
+                                                              info.visibleFraction;
+                                                        },
+                                                        child: Column(
+                                                          children: [
+                                                            const Spacer(),
+                                                            Expanded(
+                                                              child:
+                                                                  ValueListenableBuilder(
+                                                                valueListenable:
+                                                                    visibilityValueTwo,
+                                                                builder:
+                                                                    (context,
+                                                                        value,
+                                                                        child) {
+                                                                  return Opacity(
+                                                                    opacity:
+                                                                        visibilityValueTwo
+                                                                            .value,
+                                                                    child:
+                                                                        Column(
+                                                                      mainAxisAlignment:
+                                                                          MainAxisAlignment
+                                                                              .center,
+                                                                      crossAxisAlignment:
+                                                                          CrossAxisAlignment
+                                                                              .start,
+                                                                      children: [
+                                                                        Row(
+                                                                          crossAxisAlignment:
+                                                                              CrossAxisAlignment.end,
+                                                                          mainAxisAlignment:
+                                                                              MainAxisAlignment.start,
+                                                                          children: [
+                                                                            FittedBox(
+                                                                              child: Text(
+                                                                                "High Low Game",
+                                                                                style: TextStyle(
+                                                                                  height: 0.8,
+                                                                                  fontSize: 50.sp,
+                                                                                  fontWeight: FontWeight.w600,
+                                                                                ),
+                                                                                textAlign: TextAlign.left,
+                                                                              ),
+                                                                            ),
+                                                                            SizedBox(
+                                                                              width: 2.sp,
+                                                                            ),
+                                                                            OutlinedButton(
+                                                                              style: ButtonStyle(
+                                                                                shape: WidgetStateProperty.all(
+                                                                                  const CircleBorder(),
+                                                                                ),
+                                                                                overlayColor: WidgetStateProperty.all(
+                                                                                  Colors.transparent,
+                                                                                ),
+                                                                                padding: WidgetStateProperty.all(
+                                                                                  EdgeInsets.zero,
+                                                                                ),
+                                                                              ),
+                                                                              onPressed: () {
+                                                                                launchUrl(Uri.parse(""));
+                                                                              },
+                                                                              child: Image.network(
+                                                                                "https://img.icons8.com/material-outlined/48/external-link.png",
+                                                                                height: 20.sp,
+                                                                              ),
+                                                                            ),
+                                                                          ],
+                                                                        ),
+                                                                        SizedBox(
+                                                                          height:
+                                                                              10.sp,
+                                                                        ),
+                                                                        Text(
+                                                                          "I developed a Higher-Lower game in Flutter where players guess which of two TV shows has a higher IMDb rating. The game pulls data from an API that features the top 500 most famous TV shows, ensuring a dynamic and engaging experience. With an intuitive user interface and real-time feedback, players enjoy seamless gameplay while tracking their scores.",
+                                                                          textAlign:
+                                                                              TextAlign.left,
+                                                                          style:
+                                                                              TextStyle(
+                                                                            fontSize:
+                                                                                25.sp,
+                                                                            fontWeight:
+                                                                                FontWeight.w500,
+                                                                            fontFamily:
+                                                                                AppFonts.poppins,
+                                                                            color:
+                                                                                Theme.of(context).textTheme.bodyMedium!.color!.withOpacity(0.5),
+                                                                          ),
+                                                                        ),
+                                                                      ],
+                                                                    ),
+                                                                  );
+                                                                },
+                                                              ),
+                                                            ),
+                                                            const Spacer(),
+                                                          ],
+                                                        ),
+                                                      )
+                                                    : VisibilityDetector(
+                                                        key: const Key(
+                                                            "tawkDemo"),
+                                                        onVisibilityChanged:
+                                                            (info) {
+                                                          visibilityValueThree
+                                                                  .value =
+                                                              info.visibleFraction;
+                                                        },
+                                                        child: Column(
+                                                          children: [
+                                                            const Spacer(),
+                                                            Expanded(
+                                                              child:
+                                                                  ValueListenableBuilder(
+                                                                valueListenable:
+                                                                    visibilityValueThree,
+                                                                builder:
+                                                                    (context,
+                                                                        value,
+                                                                        child) {
+                                                                  return Opacity(
+                                                                    opacity:
+                                                                        visibilityValueThree
+                                                                            .value,
+                                                                    child:
+                                                                        Column(
+                                                                      mainAxisAlignment:
+                                                                          MainAxisAlignment
+                                                                              .center,
+                                                                      crossAxisAlignment:
+                                                                          CrossAxisAlignment
+                                                                              .start,
+                                                                      children: [
+                                                                        Row(
+                                                                          crossAxisAlignment:
+                                                                              CrossAxisAlignment.end,
+                                                                          mainAxisAlignment:
+                                                                              MainAxisAlignment.start,
+                                                                          children: [
+                                                                            FittedBox(
+                                                                              child: Text(
+                                                                                "ChatBot using Tawk",
+                                                                                style: TextStyle(
+                                                                                  height: 0.8,
+                                                                                  fontSize: 50.sp,
+                                                                                  fontWeight: FontWeight.w600,
+                                                                                ),
+                                                                                textAlign: TextAlign.left,
+                                                                              ),
+                                                                            ),
+                                                                            SizedBox(
+                                                                              width: 2.sp,
+                                                                            ),
+                                                                            OutlinedButton(
+                                                                              style: ButtonStyle(
+                                                                                shape: WidgetStateProperty.all(
+                                                                                  const CircleBorder(),
+                                                                                ),
+                                                                                overlayColor: WidgetStateProperty.all(
+                                                                                  Colors.transparent,
+                                                                                ),
+                                                                                padding: WidgetStateProperty.all(
+                                                                                  EdgeInsets.zero,
+                                                                                ),
+                                                                              ),
+                                                                              onPressed: () {
+                                                                                launchUrl(Uri.parse("https://github.com/vsc9729/tawk-poc"));
+                                                                              },
+                                                                              child: Image.network(
+                                                                                "https://img.icons8.com/material-outlined/48/external-link.png",
+                                                                                height: 20.sp,
+                                                                              ),
+                                                                            ),
+                                                                          ],
+                                                                        ),
+                                                                        SizedBox(
+                                                                          height:
+                                                                              10.sp,
+                                                                        ),
+                                                                        Text(
+                                                                          "I developed a chatbot using Tawk.to, a popular chatbot service. The chatbot is integrated into the website/app and provides real-time customer support. The chatbot is highly customizable and can be tailored to suit the needs of the business. The chatbot is easy to use and provides a seamless experience for customers.",
+                                                                          textAlign:
+                                                                              TextAlign.left,
+                                                                          style:
+                                                                              TextStyle(
+                                                                            fontSize:
+                                                                                25.sp,
+                                                                            fontFamily:
+                                                                                AppFonts.poppins,
+                                                                            fontWeight:
+                                                                                FontWeight.w500,
+                                                                            color:
+                                                                                Theme.of(context).textTheme.bodyMedium!.color!.withOpacity(0.5),
+                                                                          ),
+                                                                        ),
+                                                                      ],
+                                                                    ),
+                                                                  );
+                                                                },
+                                                              ),
+                                                            ),
+                                                            const Spacer(),
+                                                          ],
+                                                        ),
+                                                      ),
                                           ),
                                           const Spacer(
                                             flex: 2,
@@ -418,7 +536,8 @@ class _ProjectsState extends State<Projects>
                                                     transform:
                                                         Matrix4.identity()
                                                           ..scale(1.15, 1.15)
-                                                          ..translate(0, 35.sp),
+                                                          ..translate(
+                                                              0.0, 35.sp),
                                                     child: Image.network(
                                                       themeState is DarkTheme
                                                           ? CommonImageAssets
@@ -447,7 +566,7 @@ class _ProjectsState extends State<Projects>
                                                 return Transform(
                                                   transform: Matrix4.identity()
                                                     ..scale(1.15, 1.15)
-                                                    ..translate(0, 35.sp),
+                                                    ..translate(0.0, 35.sp),
                                                   child: Opacity(
                                                     opacity:
                                                         secondAnimationController!
@@ -485,7 +604,8 @@ class _ProjectsState extends State<Projects>
                                                     transform:
                                                         Matrix4.identity()
                                                           ..scale(1.15, 1.15)
-                                                          ..translate(0, 35.sp),
+                                                          ..translate(
+                                                              0.0, 35.sp),
                                                     child: Image.network(
                                                       themeState is DarkTheme
                                                           ? CommonImageAssets
@@ -803,7 +923,7 @@ class _ProjectsState extends State<Projects>
                                                                 ..scale(
                                                                     1.35, 1.35)
                                                                 ..translate(
-                                                                    0, 55.h),
+                                                                    0.0, 55.h),
                                                           child: Image.network(
                                                             themeState
                                                                     is DarkTheme
@@ -856,7 +976,7 @@ class _ProjectsState extends State<Projects>
                                                                 ..scale(
                                                                     1.35, 1.35)
                                                                 ..translate(
-                                                                    0, 55.h),
+                                                                    0.0, 55.h),
                                                               child:
                                                                   Image.network(
                                                                 themeState
@@ -908,7 +1028,7 @@ class _ProjectsState extends State<Projects>
                                                                 ..scale(
                                                                     1.35, 1.35)
                                                                 ..translate(
-                                                                    0, 55.h),
+                                                                    0.0, 55.h),
                                                               child:
                                                                   Image.network(
                                                                 themeState
