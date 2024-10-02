@@ -256,7 +256,9 @@ class _ProjectsState extends State<Projects>
                                                                           },
                                                                           child:
                                                                               Image.network(
-                                                                            "https://img.icons8.com/material-outlined/48/external-link.png",
+                                                                            themeState is DarkTheme
+                                                                                ? "https://firebasestorage.googleapis.com/v0/b/vikrant-portfolio-68806.appspot.com/o/ext_l.png?alt=media&token=4ae3da8e-2e01-4aad-a2d0-a09b4e363834"
+                                                                                : "https://img.icons8.com/material-outlined/48/external-link.png",
                                                                             height:
                                                                                 20.sp,
                                                                           ),
@@ -368,7 +370,7 @@ class _ProjectsState extends State<Projects>
                                                                                 launchUrl(Uri.parse(""));
                                                                               },
                                                                               child: Image.network(
-                                                                                "https://img.icons8.com/material-outlined/48/external-link.png",
+                                                                                themeState is DarkTheme ? "https://firebasestorage.googleapis.com/v0/b/vikrant-portfolio-68806.appspot.com/o/ext_l.png?alt=media&token=4ae3da8e-2e01-4aad-a2d0-a09b4e363834" : "https://img.icons8.com/material-outlined/48/external-link.png",
                                                                                 height: 20.sp,
                                                                               ),
                                                                             ),
@@ -474,7 +476,7 @@ class _ProjectsState extends State<Projects>
                                                                                 launchUrl(Uri.parse("https://github.com/vsc9729/tawk-poc"));
                                                                               },
                                                                               child: Image.network(
-                                                                                "https://img.icons8.com/material-outlined/48/external-link.png",
+                                                                                themeState is DarkTheme ? "https://firebasestorage.googleapis.com/v0/b/vikrant-portfolio-68806.appspot.com/o/ext_l.png?alt=media&token=4ae3da8e-2e01-4aad-a2d0-a09b4e363834" : "https://img.icons8.com/material-outlined/48/external-link.png",
                                                                                 height: 20.sp,
                                                                               ),
                                                                             ),
@@ -705,17 +707,54 @@ class _ProjectsState extends State<Projects>
                                                                         CrossAxisAlignment
                                                                             .start,
                                                                     children: [
-                                                                      Text(
-                                                                        "Portfolio",
-                                                                        style:
-                                                                            TextStyle(
-                                                                          fontSize:
-                                                                              30.h,
-                                                                          fontWeight:
-                                                                              FontWeight.w600,
-                                                                        ),
-                                                                        textAlign:
-                                                                            TextAlign.left,
+                                                                      Row(
+                                                                        crossAxisAlignment:
+                                                                            CrossAxisAlignment.end,
+                                                                        mainAxisAlignment:
+                                                                            MainAxisAlignment.start,
+                                                                        children: [
+                                                                          FittedBox(
+                                                                            child:
+                                                                                Text(
+                                                                              "Portfolio",
+                                                                              style: TextStyle(
+                                                                                height: 0.8,
+                                                                                fontSize: 30.h,
+                                                                                fontWeight: FontWeight.w600,
+                                                                              ),
+                                                                              textAlign: TextAlign.left,
+                                                                            ),
+                                                                          ),
+                                                                          SizedBox(
+                                                                            width:
+                                                                                2.sp,
+                                                                          ),
+                                                                          OutlinedButton(
+                                                                            style:
+                                                                                ButtonStyle(
+                                                                              shape: WidgetStateProperty.all(
+                                                                                const CircleBorder(),
+                                                                              ),
+                                                                              overlayColor: WidgetStateProperty.all(
+                                                                                Colors.transparent,
+                                                                              ),
+                                                                              padding: WidgetStateProperty.all(
+                                                                                EdgeInsets.zero,
+                                                                              ),
+                                                                            ),
+                                                                            onPressed:
+                                                                                () {
+                                                                              launchUrl(Uri.parse(
+                                                                                "https://github.com/vsc9729/flutter-web-portfolio",
+                                                                              ));
+                                                                            },
+                                                                            child:
+                                                                                Image.network(
+                                                                              themeState is DarkTheme ? "https://firebasestorage.googleapis.com/v0/b/vikrant-portfolio-68806.appspot.com/o/ext_l.png?alt=media&token=4ae3da8e-2e01-4aad-a2d0-a09b4e363834" : "https://img.icons8.com/material-outlined/48/external-link.png",
+                                                                              height: 20.h,
+                                                                            ),
+                                                                          ),
+                                                                        ],
                                                                       ),
                                                                       SizedBox(
                                                                         height:
@@ -781,15 +820,47 @@ class _ProjectsState extends State<Projects>
                                                                         crossAxisAlignment:
                                                                             CrossAxisAlignment.start,
                                                                         children: [
-                                                                          Text(
-                                                                            "High Low Game",
-                                                                            style:
-                                                                                TextStyle(
-                                                                              fontSize: 30.h,
-                                                                              fontWeight: FontWeight.w600,
-                                                                            ),
-                                                                            textAlign:
-                                                                                TextAlign.left,
+                                                                          Row(
+                                                                            crossAxisAlignment:
+                                                                                CrossAxisAlignment.end,
+                                                                            mainAxisAlignment:
+                                                                                MainAxisAlignment.start,
+                                                                            children: [
+                                                                              FittedBox(
+                                                                                child: Text(
+                                                                                  "High Low Game",
+                                                                                  style: TextStyle(
+                                                                                    height: 0.8,
+                                                                                    fontSize: 30.h,
+                                                                                    fontWeight: FontWeight.w600,
+                                                                                  ),
+                                                                                  textAlign: TextAlign.left,
+                                                                                ),
+                                                                              ),
+                                                                              SizedBox(
+                                                                                width: 2.sp,
+                                                                              ),
+                                                                              OutlinedButton(
+                                                                                style: ButtonStyle(
+                                                                                  shape: WidgetStateProperty.all(
+                                                                                    const CircleBorder(),
+                                                                                  ),
+                                                                                  overlayColor: WidgetStateProperty.all(
+                                                                                    Colors.transparent,
+                                                                                  ),
+                                                                                  padding: WidgetStateProperty.all(
+                                                                                    EdgeInsets.zero,
+                                                                                  ),
+                                                                                ),
+                                                                                onPressed: () {
+                                                                                  launchUrl(Uri.parse(""));
+                                                                                },
+                                                                                child: Image.network(
+                                                                                  themeState is DarkTheme ? "https://firebasestorage.googleapis.com/v0/b/vikrant-portfolio-68806.appspot.com/o/ext_l.png?alt=media&token=4ae3da8e-2e01-4aad-a2d0-a09b4e363834" : "https://img.icons8.com/material-outlined/48/external-link.png",
+                                                                                  height: 20.h,
+                                                                                ),
+                                                                              ),
+                                                                            ],
                                                                           ),
                                                                           SizedBox(
                                                                             height:
@@ -847,15 +918,47 @@ class _ProjectsState extends State<Projects>
                                                                         crossAxisAlignment:
                                                                             CrossAxisAlignment.start,
                                                                         children: [
-                                                                          Text(
-                                                                            "ChatBot using Tawk",
-                                                                            style:
-                                                                                TextStyle(
-                                                                              fontSize: 30.h,
-                                                                              fontWeight: FontWeight.w600,
-                                                                            ),
-                                                                            textAlign:
-                                                                                TextAlign.left,
+                                                                          Row(
+                                                                            crossAxisAlignment:
+                                                                                CrossAxisAlignment.end,
+                                                                            mainAxisAlignment:
+                                                                                MainAxisAlignment.start,
+                                                                            children: [
+                                                                              FittedBox(
+                                                                                child: Text(
+                                                                                  "ChatBot using Tawk",
+                                                                                  style: TextStyle(
+                                                                                    height: 0.8,
+                                                                                    fontSize: 30.h,
+                                                                                    fontWeight: FontWeight.w600,
+                                                                                  ),
+                                                                                  textAlign: TextAlign.left,
+                                                                                ),
+                                                                              ),
+                                                                              SizedBox(
+                                                                                width: 2.sp,
+                                                                              ),
+                                                                              OutlinedButton(
+                                                                                style: ButtonStyle(
+                                                                                  shape: WidgetStateProperty.all(
+                                                                                    const CircleBorder(),
+                                                                                  ),
+                                                                                  overlayColor: WidgetStateProperty.all(
+                                                                                    Colors.transparent,
+                                                                                  ),
+                                                                                  padding: WidgetStateProperty.all(
+                                                                                    EdgeInsets.zero,
+                                                                                  ),
+                                                                                ),
+                                                                                onPressed: () {
+                                                                                  launchUrl(Uri.parse("https://github.com/vsc9729/tawk-poc"));
+                                                                                },
+                                                                                child: Image.network(
+                                                                                  themeState is DarkTheme ? "https://firebasestorage.googleapis.com/v0/b/vikrant-portfolio-68806.appspot.com/o/ext_l.png?alt=media&token=4ae3da8e-2e01-4aad-a2d0-a09b4e363834" : "https://img.icons8.com/material-outlined/48/external-link.png",
+                                                                                  height: 20.h,
+                                                                                ),
+                                                                              ),
+                                                                            ],
                                                                           ),
                                                                           SizedBox(
                                                                             height:
