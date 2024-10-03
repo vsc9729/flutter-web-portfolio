@@ -727,22 +727,10 @@ class _ProjectsState extends State<Projects>
                                                                           ),
                                                                           SizedBox(
                                                                             width:
-                                                                                2.sp,
+                                                                                5.h,
                                                                           ),
-                                                                          OutlinedButton(
-                                                                            style:
-                                                                                ButtonStyle(
-                                                                              shape: WidgetStateProperty.all(
-                                                                                const CircleBorder(),
-                                                                              ),
-                                                                              overlayColor: WidgetStateProperty.all(
-                                                                                Colors.transparent,
-                                                                              ),
-                                                                              padding: WidgetStateProperty.all(
-                                                                                EdgeInsets.zero,
-                                                                              ),
-                                                                            ),
-                                                                            onPressed:
+                                                                          GestureDetector(
+                                                                            onTap:
                                                                                 () {
                                                                               launchUrl(Uri.parse(
                                                                                 "https://github.com/vsc9729/flutter-web-portfolio",
@@ -751,7 +739,7 @@ class _ProjectsState extends State<Projects>
                                                                             child:
                                                                                 Image.network(
                                                                               themeState is DarkTheme ? "https://firebasestorage.googleapis.com/v0/b/vikrant-portfolio-68806.appspot.com/o/ext_l.png?alt=media&token=4ae3da8e-2e01-4aad-a2d0-a09b4e363834" : "https://img.icons8.com/material-outlined/48/external-link.png",
-                                                                              height: 20.h,
+                                                                              height: 25.h,
                                                                             ),
                                                                           ),
                                                                         ],
@@ -838,26 +826,15 @@ class _ProjectsState extends State<Projects>
                                                                                 ),
                                                                               ),
                                                                               SizedBox(
-                                                                                width: 2.sp,
+                                                                                width: 5.h,
                                                                               ),
-                                                                              OutlinedButton(
-                                                                                style: ButtonStyle(
-                                                                                  shape: WidgetStateProperty.all(
-                                                                                    const CircleBorder(),
-                                                                                  ),
-                                                                                  overlayColor: WidgetStateProperty.all(
-                                                                                    Colors.transparent,
-                                                                                  ),
-                                                                                  padding: WidgetStateProperty.all(
-                                                                                    EdgeInsets.zero,
-                                                                                  ),
-                                                                                ),
-                                                                                onPressed: () {
+                                                                              GestureDetector(
+                                                                                onTap: () {
                                                                                   launchUrl(Uri.parse(""));
                                                                                 },
                                                                                 child: Image.network(
                                                                                   themeState is DarkTheme ? "https://firebasestorage.googleapis.com/v0/b/vikrant-portfolio-68806.appspot.com/o/ext_l.png?alt=media&token=4ae3da8e-2e01-4aad-a2d0-a09b4e363834" : "https://img.icons8.com/material-outlined/48/external-link.png",
-                                                                                  height: 20.h,
+                                                                                  height: 25.h,
                                                                                 ),
                                                                               ),
                                                                             ],
@@ -889,7 +866,7 @@ class _ProjectsState extends State<Projects>
                                                         )
                                                       : VisibilityDetector(
                                                           key: const Key(
-                                                              "portfolio"),
+                                                              "tawkDemo"),
                                                           onVisibilityChanged:
                                                               (info) {
                                                             visibilityValueThree
@@ -936,26 +913,15 @@ class _ProjectsState extends State<Projects>
                                                                                 ),
                                                                               ),
                                                                               SizedBox(
-                                                                                width: 2.sp,
+                                                                                width: 5.h,
                                                                               ),
-                                                                              OutlinedButton(
-                                                                                style: ButtonStyle(
-                                                                                  shape: WidgetStateProperty.all(
-                                                                                    const CircleBorder(),
-                                                                                  ),
-                                                                                  overlayColor: WidgetStateProperty.all(
-                                                                                    Colors.transparent,
-                                                                                  ),
-                                                                                  padding: WidgetStateProperty.all(
-                                                                                    EdgeInsets.zero,
-                                                                                  ),
-                                                                                ),
-                                                                                onPressed: () {
+                                                                              GestureDetector(
+                                                                                onTap: () {
                                                                                   launchUrl(Uri.parse("https://github.com/vsc9729/tawk-poc"));
                                                                                 },
                                                                                 child: Image.network(
                                                                                   themeState is DarkTheme ? "https://firebasestorage.googleapis.com/v0/b/vikrant-portfolio-68806.appspot.com/o/ext_l.png?alt=media&token=4ae3da8e-2e01-4aad-a2d0-a09b4e363834" : "https://img.icons8.com/material-outlined/48/external-link.png",
-                                                                                  height: 20.h,
+                                                                                  height: 25.h,
                                                                                 ),
                                                                               ),
                                                                             ],
