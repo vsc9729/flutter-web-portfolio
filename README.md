@@ -1,16 +1,27 @@
-# portfolio
+# Portfolio Website - vikrantsingh.tech
 
-A new Flutter project.
+This repository contains the source code for my personal portfolio website, [vikrantsingh.tech](https://vikrantsingh.tech), created using Flutter. The site showcases my professional journey, projects, skills, and ways to connect.
+
+## Features
+- *Responsive Design*: Ensures a smooth experience across devices.
+- *Projects Section*: Highlights my projects with descriptions, technologies, and links.
+- *About Me*: Shares an overview of my skills, background, and expertise.
+- *Contact Form*: Allows visitors to reach out directly from the website.
+- *Social Media Links*: Connect with me on platforms like LinkedIn, GitHub, and Twitter.
+
+## Tech Stack
+- *Frontend*: Flutter Web
+- *Hosting*: Firebase Hosting
 
 ## Getting Started
 
-This project is a starting point for a Flutter application.
+Follow these steps to get a local copy up and running:
 
-A few resources to get you started if this is your first Flutter project:
+### Prerequisites
+- Flutter SDK: [Install Flutter](https://flutter.dev/docs/get-started/install)
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+### Installation
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+1. *Clone the repository*:
+   ```bash
+   git clone https://github.com/yourusername/portfolio.git
