@@ -1,13 +1,4 @@
-import 'dart:async';
-
-import 'package:bloc/bloc.dart';
-import 'package:flutter/material.dart';
-import 'package:meta/meta.dart';
-import 'package:portfolio/constants/app_constants.dart';
-import 'package:portfolio/repository/weather_repo.dart';
-import 'package:portfolio/serializers/weather.dart';
-import 'package:portfolio/utils/common_util.dart';
-import 'package:http/http.dart' as http;
+import 'package:portfolio/imports.dart';
 
 part 'weather_event.dart';
 part 'weather_state.dart';
