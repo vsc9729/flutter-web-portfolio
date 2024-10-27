@@ -18,6 +18,14 @@ class MyLocalStorage {
     return prefs.getStringList("imageList") ?? [];
   }
 
+  Future<void> setHighScore(int highScore) async {
+    await prefs.setInt('highScore', highScore);
+  }
+
+  int getHighScore() {
+    return prefs.getInt('highScore') ?? 0;
+  }
+
   clearAll() async {
     await prefs.clear();
   }

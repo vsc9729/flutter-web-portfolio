@@ -37,5 +37,6 @@ class WeatherRepository {
     } catch (e) {
       debugPrint(e.toString());
     }
+    return null;
   }
 }

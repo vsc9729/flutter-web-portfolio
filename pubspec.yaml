@@ -38,7 +38,6 @@ dependencies:
   flutter_screenutil: ^5.9.0
   bloc: ^8.1.2
   flutter_bloc: ^8.1.3
-  particles_fly: ^0.0.8
   animated_text_kit: ^4.2.2
   flutter_svg: ^2.0.9
   url_launcher: ^6.2.3
@@ -49,6 +48,15 @@ dependencies:
   video_player: ^2.8.2
   shared_preferences: ^2.2.2
   just_audio: ^0.9.36
+  lottie: ^3.1.2
+  cached_network_image: ^3.4.1
+  flutter_animate: ^4.5.0
+  defer_pointer: ^0.0.2
+  neopop: ^1.0.2
+  visibility_detector: ^0.4.0+2
+
+dependency_overrides:
+  win32: ^5.5.4
 
 dev_dependencies:
   flutter_test:
@@ -77,6 +85,7 @@ flutter:
     - dotenv
     - assets/images/
     - assets/audio/
+    - assets/lottie/
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware
@@ -130,6 +139,47 @@ flutter:
           weight: 800
         - asset: assets/fonts/Roboto/Roboto-BlackItalic.ttf
           weight: 900
+    - family: Poppins
+      fonts:
+        - asset: assets/fonts/Poppins/Poppins-Thin.ttf
+          weight: 100
+        - asset: assets/fonts/Poppins/Poppins-Thin.ttf
+          weight: 200
+        - asset: assets/fonts/Poppins/Poppins-Regular.ttf
+          weight: 300
+        - asset: assets/fonts/Poppins/Poppins-Regular.ttf
+          weight: 400
+        - asset: assets/fonts/Poppins/Poppins-Medium.ttf
+          weight: 500
+        - asset: assets/fonts/Poppins/Poppins-Medium.ttf
+          weight: 600
+        - asset: assets/fonts/Poppins/Poppins-Bold.ttf
+          weight: 700
+        - asset: assets/fonts/Poppins/Poppins-Bold.ttf
+          weight: 800
+        - asset: assets/fonts/Poppins/Poppins-Black.ttf
+          weight: 900
+    - family: PoppinsItalic
+      fonts:
+        - asset: assets/fonts/Poppins/Poppins-ThinItalic.ttf
+          weight: 100
+        - asset: assets/fonts/Poppins/Poppins-ThinItalic.ttf
+          weight: 200
+        - asset: assets/fonts/Poppins/Poppins-Italic.ttf
+          weight: 300
+        - asset: assets/fonts/Poppins/Poppins-Italic.ttf
+          weight: 400
+        - asset: assets/fonts/Poppins/Poppins-MediumItalic.ttf
+          weight: 500
+        - asset: assets/fonts/Poppins/Poppins-MediumItalic.ttf
+          weight: 600
+        - asset: assets/fonts/Poppins/Poppins-BoldItalic.ttf
+          weight: 700
+        - asset: assets/fonts/Poppins/Poppins-BoldItalic.ttf
+          weight: 800
+        - asset: assets/fonts/Poppins/Poppins-BlackItalic.ttf
+          weight: 900
+
   #
   # For details regarding fonts from package dependencies,
   # see https://flutter.dev/custom-fonts/#from-packages

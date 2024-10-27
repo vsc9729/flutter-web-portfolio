@@ -23,13 +23,13 @@
   <!-- iOS meta tags & icons -->
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black">
-  <meta name="apple-mobile-web-app-title" content="portfolio">
+  <meta name="apple-mobile-web-app-title" content="Vikrant Singh">
   <link rel="apple-touch-icon" href="icons/Icon-192.png">
 
   <!-- Favicon -->
   <link rel="icon" type="image/png" href="favicon.png"/>
 
-  <title>portfolio</title>
+  <title>Vikrant Singh</title>
   <link rel="manifest" href="manifest.json">
 
   <script>
@@ -38,16 +38,144 @@
   </script>
   <!-- This script adds the flutter initialization JS code -->
   <script src="flutter.js" defer></script>
+  <!--Start of Tawk.to Script-->
+<!-- <script type="text/javascript">
+  var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+  (function(){
+  var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
+  s1.async=true;
+  s1.src='https://embed.tawk.to/6690d7757a36f5aaec976fc8/1i2isja40';
+  s1.charset='UTF-8';
+  s1.setAttribute('crossorigin','*');
+  s0.parentNode.insertBefore(s1,s0);
+  })();
+  </script> -->
+  <!--End of Tawk.to Script-->
 </head>
+
 <body>
+  <style>
+    body {
+      margin: 0;
+      height: 100vh;
+      width: 100vw;
+    }
+    *,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+html {
+  box-sizing: border-box;
+}
+
+body {
+  height: 100vh;
+}
+
+.container {
+  display: grid;
+  place-items: center;
+  height: 100%;
+  padding: 10%;
+  background: rgba(0, 0, 0, 0);
+}
+
+.loader {
+  width: 30vh;
+  aspect-ratio: 1/1;
+  position: relative;
+}
+
+.dot {
+  margin: auto;
+  aspect-ratio: 1/1;
+  border-radius: 50%;
+  position: absolute;
+  inset: 0;
+  background: #4fc3f7;
+  box-shadow: 2px 4px 10px 3px rgba(0, 0, 0, 0.2);
+  animation: 2s ease infinite alternate;
+}
+.dot-lower {
+  width: 30vh;
+  animation-name: lower;
+}
+.dot-middle {
+  width: 20vh;
+  animation-name: middle;
+}
+.dot-upper {
+  width: 10vh;
+  animation-name: upper;
+}
+
+@keyframes lower {
+  0%, 30% {
+    scale: 0;
+  }
+  100% {
+    scale: 1;
+  }
+}
+@keyframes middle {
+  0%, 50% {
+    scale: 0;
+  }
+  100% {
+    scale: 1;
+  }
+}
+@keyframes upper {
+  0%, 70% {
+    scale: 0;
+  }
+  100% {
+    scale: 1;
+  }
+}
+    .main-content {
+      height: 100%;
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      transition: opacity 0.5s ease-out;
+      
+    }
+
+    .animate{
+      animation: linear;
+      animation-name: run;
+      animation-duration: 2s;
+    }
+    @keyframes run {
+      0% {
+        left: 0;
+        transform: translateX(0);
+      }
+      100% {
+        left: 100%;
+        transform: translateX(-100%);
+      }
+  }
+  </style>
   <script>
+    function delay(ms) {
+      return new Promise(resolve => setTimeout(resolve, ms));
+    }
     window.addEventListener('load', function(ev) {
+      var loaderContent = document.querySelector('#loader-content');
       // Download main.dart.js
       _flutter.loader.loadEntrypoint({
         serviceWorker: {
           serviceWorkerVersion: serviceWorkerVersion,
         },
-        onEntrypointLoaded: function(engineInitializer) {
+        onEntrypointLoaded: async function(engineInitializer) {
+          loaderContent.classList.add("animate");
+          loaderContent.style.opacity = "0";
+          
           engineInitializer.initializeEngine().then(function(appRunner) {
             appRunner.runApp();
           });
@@ -55,5 +183,14 @@
       });
     });
   </script>
+  <div class = "main-content" id = "loader-content">
+    <div class="container">
+      <div class="loader">
+        <div class="dot dot-lower"></div>
+        <div class="dot dot-middle"></div>
+        <div class="dot dot-upper"></div>
+      </div>
+    </div>
+  </div>
 </body>
 </html>
