@@ -1,5 +1,4 @@
-import 'package:portfolio/models/cities.dart';
-
+import 'package:portfolio/imports.dart';
 List<City> cities = [
   // City(
   //   name: 'London',

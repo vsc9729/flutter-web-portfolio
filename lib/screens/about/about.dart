@@ -1,17 +1,4 @@
-import 'package:flutter/gestures.dart';
-import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
-
-import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:lottie/lottie.dart';
-import 'package:neopop/widgets/buttons/neopop_button/neopop_button.dart';
-import 'package:portfolio/bloc/theme/theme_bloc.dart';
-import 'package:portfolio/constants/common_assets.dart';
-import 'package:portfolio/screens/about/widgets/skill_tile.dart';
-import 'package:portfolio/screens/common/common_string.dart';
-import 'package:portfolio/theme/index.dart';
-import 'package:portfolio/utils/common_util.dart';
-import 'package:url_launcher/url_launcher.dart';
+import 'package:portfolio/imports.dart';
 
 class AboutMe extends StatefulWidget {
   const AboutMe({super.key, required this.pageController});
@@ -28,7 +15,6 @@ class _AboutMeState extends State<AboutMe> {
   void initState() {
     super.initState();
     widget.pageController.addListener(() {
-      print("page.value${page.value}");
       page.value = (widget.pageController.page! - 1) * -500;
     });
   }
@@ -102,16 +88,6 @@ class _AboutMeState extends State<AboutMe> {
                   ),
                 ),
               ),
-              // SizedBox(
-              //   height: 22.h,
-              // ),
-              // Text(
-              //   'About Me',
-              //   style: TextStyle(
-              //     fontSize: 40.h,
-              //     fontWeight: FontWeight.w800,
-              //   ),
-              // ),
               SizedBox(
                 height: 12.h,
               ),
@@ -301,12 +277,6 @@ class _AboutMeState extends State<AboutMe> {
                                 repeat: false,
                                 frameRate: FrameRate.max,
                                 height: 100.h,
-                                // width: 180.h,
-                                // width: (MediaQuery.of(context)
-                                //             .orientation ==
-                                //         Orientation.landscape
-                                //     ? 190.sp
-                                //     : 800.sp),
                               ),
                             ),
                           ],
@@ -559,69 +529,4 @@ class _AboutMeState extends State<AboutMe> {
   }
 }
 
-class BottomSkillsRow extends StatelessWidget {
-  const BottomSkillsRow({
-    super.key,
-  });
 
-  @override
-  Widget build(BuildContext context) {
-    return Align(
-      alignment: Alignment.centerLeft,
-      child: Wrap(
-        spacing: 15.r,
-        runSpacing: 10.r,
-        children: const [
-          SkillTile(
-            tileColor: Color(0xff00ADD8),
-            tileText: AppStrings.flutter,
-          ),
-          SkillTile(
-            tileColor: Color(0xff234A84),
-            tileText: AppStrings.bloc,
-          ),
-          SkillTile(
-            tileColor: Color(0xff61DAF6),
-            tileText: AppStrings.dart,
-          ),
-          SkillTile(
-            tileColor: Color(0xffFF9900),
-            tileText: AppStrings.graphql,
-          ),
-          SkillTile(
-            tileColor: Color(0xff4285F4),
-            tileText: AppStrings.android,
-          ),
-          SkillTile(
-            tileColor: Color(0xff326CE5),
-            tileText: AppStrings.ios,
-          ),
-          SkillTile(
-            tileColor: Color(0xff0DB7ED),
-            tileText: AppStrings.apiIntegration,
-          ),
-          SkillTile(
-            tileColor: Color(0xff7B42BC),
-            tileText: AppStrings.ciCd,
-          ),
-          SkillTile(
-            tileColor: Color(0xff199BFC),
-            tileText: AppStrings.provider,
-          ),
-          SkillTile(
-            tileColor: Color(0xffD82C20),
-            tileText: AppStrings.firebase,
-          ),
-          SkillTile(
-            tileColor: Color(0xffE535AB),
-            tileText: AppStrings.git,
-          ),
-          SkillTile(
-            tileColor: Color(0xff68A063),
-            tileText: AppStrings.mvvm,
-          ),
-        ],
-      ),
-    );
-  }
-}

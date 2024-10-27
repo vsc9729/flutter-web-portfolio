@@ -1,15 +1,4 @@
-import 'package:flutter/material.dart';
-import 'package:flutter_animate/flutter_animate.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:flutter_dotenv/flutter_dotenv.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
-
-import 'package:portfolio/bloc/series_game/series_game_bloc.dart';
-import 'package:portfolio/bloc/theme/theme_bloc.dart';
-import 'package:portfolio/bloc/weather/weather_bloc.dart';
-import 'package:portfolio/screens/home/home.dart';
-import 'package:portfolio/services/local_storage/local_storage.dart';
-import 'package:portfolio/theme/index.dart';
+import 'imports.dart';
 
 var keyOne = GlobalKey<NavigatorState>();
 var keyTwo = GlobalKey<NavigatorState>();
@@ -46,7 +35,7 @@ class MyApp extends StatelessWidget {
           builder: (context, appThemeState) {
             appThemeState = appThemeState;
             return MaterialApp(
-              title: 'Vikrant Singh',
+              title: AppStrings.name,
               navigatorKey: keyOne,
               debugShowCheckedModeBanner: false,
               theme: appThemeState is DarkTheme

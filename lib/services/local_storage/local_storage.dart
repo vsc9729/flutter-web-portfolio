@@ -1,4 +1,4 @@
-import 'package:shared_preferences/shared_preferences.dart';
+import 'package:portfolio/imports.dart';
 
 class MyLocalStorage {
   static late SharedPreferences prefs;

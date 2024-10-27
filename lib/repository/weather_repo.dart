@@ -1,10 +1,5 @@
-import 'dart:convert';
-
-import 'package:flutter/material.dart';
+import 'package:portfolio/imports.dart';
 import 'package:http/http.dart';
-import 'package:portfolio/constants/app_constants.dart';
-import 'package:portfolio/serializers/weather.dart';
-import 'package:portfolio/utils/common_util.dart';
 import 'package:http/http.dart' as http;
 
 class WeatherRepository {

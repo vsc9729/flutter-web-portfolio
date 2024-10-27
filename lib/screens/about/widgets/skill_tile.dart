@@ -1,6 +1,4 @@
-import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
-
+import 'package:portfolio/imports.dart';
 class SkillTile extends StatelessWidget {
   final Color tileColor;
   final String tileText;

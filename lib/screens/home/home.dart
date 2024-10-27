@@ -1,19 +1,4 @@
-import 'package:animated_text_kit/animated_text_kit.dart';
-import 'package:defer_pointer/defer_pointer.dart';
-import 'package:flutter/gestures.dart';
-import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
-
-import 'package:portfolio/bloc/theme/theme_bloc.dart';
-import 'package:portfolio/main.dart';
-import 'package:portfolio/screens/about/about.dart';
-import 'package:portfolio/screens/contact/contact.dart';
-import 'package:portfolio/screens/mobile/mobile.dart';
-import 'package:portfolio/screens/projects/projects.dart';
-import 'package:portfolio/utils/app_scroll_behaviour.dart';
-import 'package:portfolio/utils/common_util.dart';
-import 'package:portfolio/utils/page_scroll_physics.dart';
+import 'package:portfolio/imports.dart';
 
 class MyHomePage extends StatefulWidget {
   const MyHomePage({super.key});
@@ -225,7 +210,7 @@ class _MyHomePageState extends State<MyHomePage>
                                                                         false,
                                                                     animatedTexts: [
                                                                       TypewriterAnimatedText(
-                                                                        'Hi, I am Vikrant',
+                                                                        AppStrings.hiVikrant,
                                                                         speed:
                                                                             const Duration(
                                                                           milliseconds:
@@ -236,7 +221,7 @@ class _MyHomePageState extends State<MyHomePage>
                                                                   ),
                                                                 ),
                                                                 Text(
-                                                                  'Software Developer',
+                                                                  AppStrings.softwareDeveloper,
                                                                   style:
                                                                       TextStyle(
                                                                     fontSize: CommonUtil
@@ -251,7 +236,7 @@ class _MyHomePageState extends State<MyHomePage>
                                                                 Wrap(
                                                                   children: [
                                                                     Text(
-                                                                      'Discover more',
+                                                                      AppStrings.discoverMore,
                                                                       style:
                                                                           TextStyle(
                                                                         fontSize: CommonUtil.scaleText(
@@ -287,7 +272,7 @@ class _MyHomePageState extends State<MyHomePage>
                                                                             (context,
                                                                                 state) {
                                                                           return Text(
-                                                                            'about me,',
+                                                                            AppStrings.aboutMe,
                                                                             style:
                                                                                 TextStyle(
                                                                               fontSize: CommonUtil.scaleText(50.sp, context),
@@ -325,7 +310,7 @@ class _MyHomePageState extends State<MyHomePage>
                                                                             (context,
                                                                                 state) {
                                                                           return Text(
-                                                                            'my projects',
+                                                                            AppStrings.myProject,
                                                                             style: TextStyle(
                                                                                 fontSize: CommonUtil.scaleText(
                                                                                   50.sp,
@@ -338,7 +323,7 @@ class _MyHomePageState extends State<MyHomePage>
                                                                       ),
                                                                     ),
                                                                     Text(
-                                                                      ' or ',
+                                                                      AppStrings.or,
                                                                       style:
                                                                           TextStyle(
                                                                         fontSize: CommonUtil.scaleText(
@@ -364,7 +349,7 @@ class _MyHomePageState extends State<MyHomePage>
                                                                             (context,
                                                                                 state) {
                                                                           return Text(
-                                                                            'get in touch.',
+                                                                            AppStrings.getInTouch,
                                                                             style: TextStyle(
                                                                                 fontSize: CommonUtil.scaleText(50.sp, context),
                                                                                 fontWeight: FontWeight.w500,

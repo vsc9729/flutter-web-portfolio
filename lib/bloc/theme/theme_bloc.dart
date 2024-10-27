@@ -1,7 +1,4 @@
-import 'dart:async';
-
-import 'package:bloc/bloc.dart';
-import 'package:meta/meta.dart';
+import 'package:portfolio/imports.dart';
 
 part 'theme_event.dart';
 part 'theme_state.dart';

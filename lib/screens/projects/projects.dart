@@ -1,15 +1,4 @@
-import 'package:flutter/gestures.dart';
-import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:portfolio/bloc/theme/theme_bloc.dart';
-import 'package:portfolio/constants/common_assets.dart';
-import 'package:portfolio/main.dart';
-import 'package:portfolio/theme/index.dart';
-import 'package:portfolio/utils/page_scroll_physics.dart';
-import 'package:url_launcher/url_launcher.dart';
-import 'package:visibility_detector/visibility_detector.dart';
-
+import 'package:portfolio/imports.dart';
 class Projects extends StatefulWidget {
   const Projects({super.key, required this.websitePageController});
   final PageController websitePageController;
@@ -63,11 +52,9 @@ class _ProjectsState extends State<Projects>
       reverseDuration: const Duration(milliseconds: 250),
     );
     widget.websitePageController.addListener(() {
-      print("anv: ${animationValue.value}");
       animationValue.value = (widget.websitePageController.page! - 2) * -500;
     });
     widget.websitePageController.addListener(() {
-      // print("Website Page: ${widget.websitePageController.page}");
       if (widget.websitePageController.page!.floor() == 2) {
         scrollValue.value = 1;
       } else {
@@ -217,7 +204,7 @@ class _ProjectsState extends State<Projects>
                                                                         FittedBox(
                                                                           child:
                                                                               Text(
-                                                                            "Portfolio",
+                                                                            AppStrings.portfolio,
                                                                             style:
                                                                                 TextStyle(
                                                                               height: 0.8,
@@ -251,7 +238,7 @@ class _ProjectsState extends State<Projects>
                                                                           onPressed:
                                                                               () {
                                                                             launchUrl(Uri.parse(
-                                                                              "https://github.com/vsc9729/flutter-web-portfolio",
+                                                                              AppStrings.githubLink,
                                                                             ));
                                                                           },
                                                                           child:
@@ -270,7 +257,7 @@ class _ProjectsState extends State<Projects>
                                                                           10.sp,
                                                                     ),
                                                                     Text(
-                                                                      "The portfolio website that you are currently on is made using Flutter and Dart. It is a responsive website that works on all devices. The website is hosted on Firebase Hosting. The website is made using the BLoC pattern.",
+                                                                      AppStrings.aboutPortfolio,
                                                                       textAlign:
                                                                           TextAlign
                                                                               .left,
@@ -342,7 +329,7 @@ class _ProjectsState extends State<Projects>
                                                                           children: [
                                                                             FittedBox(
                                                                               child: Text(
-                                                                                "High Low Game",
+                                                                                AppStrings.gameText,
                                                                                 style: TextStyle(
                                                                                   height: 0.8,
                                                                                   fontSize: 50.sp,
@@ -381,7 +368,7 @@ class _ProjectsState extends State<Projects>
                                                                               10.sp,
                                                                         ),
                                                                         Text(
-                                                                          "I developed a Higher-Lower game in Flutter where players guess which of two TV shows has a higher IMDb rating. The game pulls data from an API that features the top 500 most famous TV shows, ensuring a dynamic and engaging experience. With an intuitive user interface and real-time feedback, players enjoy seamless gameplay while tracking their scores.",
+                                                                          AppStrings.gameDesc,
                                                                           textAlign:
                                                                               TextAlign.left,
                                                                           style:
@@ -448,7 +435,7 @@ class _ProjectsState extends State<Projects>
                                                                           children: [
                                                                             FittedBox(
                                                                               child: Text(
-                                                                                "ChatBot using Tawk",
+                                                                                AppStrings.chatBotText,
                                                                                 style: TextStyle(
                                                                                   height: 0.8,
                                                                                   fontSize: 50.sp,
@@ -473,7 +460,7 @@ class _ProjectsState extends State<Projects>
                                                                                 ),
                                                                               ),
                                                                               onPressed: () {
-                                                                                launchUrl(Uri.parse("https://github.com/vsc9729/tawk-poc"));
+                                                                                launchUrl(Uri.parse(AppStrings.chatbotUrl));
                                                                               },
                                                                               child: Image.network(
                                                                                 themeState is DarkTheme ? "https://firebasestorage.googleapis.com/v0/b/vikrant-portfolio-68806.appspot.com/o/ext_l.png?alt=media&token=4ae3da8e-2e01-4aad-a2d0-a09b4e363834" : "https://img.icons8.com/material-outlined/48/external-link.png",
@@ -487,7 +474,7 @@ class _ProjectsState extends State<Projects>
                                                                               10.sp,
                                                                         ),
                                                                         Text(
-                                                                          "I developed a chatbot using Tawk.to, a popular chatbot service. The chatbot is integrated into the website/app and provides real-time customer support. The chatbot is highly customizable and can be tailored to suit the needs of the business. The chatbot is easy to use and provides a seamless experience for customers.",
+                                                                          AppStrings.chatbotDesc,
                                                                           textAlign:
                                                                               TextAlign.left,
                                                                           style:
@@ -628,7 +615,6 @@ class _ProjectsState extends State<Projects>
                             } else {
                               return GestureDetector(
                                 onPanUpdate: (details) {
-                                  print("delta: ${details.delta.dy}");
                                   if (details.delta.dy > 0 &&
                                       pageController.page! >= 2 &&
                                       widget.websitePageController.page!
@@ -716,7 +702,7 @@ class _ProjectsState extends State<Projects>
                                                                           FittedBox(
                                                                             child:
                                                                                 Text(
-                                                                              "Portfolio",
+                                                                              AppStrings.portfolio,
                                                                               style: TextStyle(
                                                                                 height: 0.8,
                                                                                 fontSize: 30.h,
@@ -749,7 +735,7 @@ class _ProjectsState extends State<Projects>
                                                                             15.h,
                                                                       ),
                                                                       Text(
-                                                                        "The portfolio website that you are currently on is made using Flutter and Dart. It is a responsive website that works on all devices. The website is hosted on Firebase Hosting. The website is made using the BLoC pattern.",
+                                                                        AppStrings.aboutPortfolio,
                                                                         textAlign:
                                                                             TextAlign.left,
                                                                         style:
@@ -816,7 +802,7 @@ class _ProjectsState extends State<Projects>
                                                                             children: [
                                                                               FittedBox(
                                                                                 child: Text(
-                                                                                  "High Low Game",
+                                                                                  AppStrings.gameText,
                                                                                   style: TextStyle(
                                                                                     height: 0.8,
                                                                                     fontSize: 30.h,
@@ -844,7 +830,7 @@ class _ProjectsState extends State<Projects>
                                                                                 15.h,
                                                                           ),
                                                                           Text(
-                                                                            "I developed a Higher-Lower game in Flutter where players guess which of two TV shows has a higher IMDb rating. The game pulls data from an API that features the top 500 most famous TV shows, ensuring a dynamic and engaging experience. With an intuitive user interface and real-time feedback, players enjoy seamless gameplay while tracking their scores.",
+                                                                            AppStrings.gameDesc,
                                                                             textAlign:
                                                                                 TextAlign.left,
                                                                             style:
@@ -903,7 +889,7 @@ class _ProjectsState extends State<Projects>
                                                                             children: [
                                                                               FittedBox(
                                                                                 child: Text(
-                                                                                  "ChatBot using Tawk",
+                                                                                  AppStrings.chatBotText,
                                                                                   style: TextStyle(
                                                                                     height: 0.8,
                                                                                     fontSize: 30.h,
@@ -917,7 +903,7 @@ class _ProjectsState extends State<Projects>
                                                                               ),
                                                                               GestureDetector(
                                                                                 onTap: () {
-                                                                                  launchUrl(Uri.parse("https://github.com/vsc9729/tawk-poc"));
+                                                                                  launchUrl(Uri.parse(AppStrings.chatbotUrl));
                                                                                 },
                                                                                 child: Image.network(
                                                                                   themeState is DarkTheme ? "https://firebasestorage.googleapis.com/v0/b/vikrant-portfolio-68806.appspot.com/o/ext_l.png?alt=media&token=4ae3da8e-2e01-4aad-a2d0-a09b4e363834" : "https://img.icons8.com/material-outlined/48/external-link.png",
@@ -931,7 +917,7 @@ class _ProjectsState extends State<Projects>
                                                                                 15.h,
                                                                           ),
                                                                           Text(
-                                                                            "I developed a chatbot using Tawk.to, a popular chatbot service. The chatbot is integrated into the website/app and provides real-time customer support. The chatbot is highly customizable and can be tailored to suit the needs of the business. The chatbot is easy to use and provides a seamless experience for customers.",
+                                                                            AppStrings.chatbotDesc,
                                                                             textAlign:
                                                                                 TextAlign.left,
                                                                             style:

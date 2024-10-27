@@ -1,12 +1,5 @@
-import 'dart:convert';
-
-import 'package:flutter/material.dart';
-import 'package:flutter_dotenv/flutter_dotenv.dart';
-import 'package:portfolio/serializers/series_info.dart';
-import 'dart:math';
+import 'package:portfolio/imports.dart';
 import 'package:http/http.dart' as http;
-import 'package:portfolio/services/local_storage/local_storage.dart';
-import 'package:shared_preferences/shared_preferences.dart';
 
 class SeriesRepo {
   final String _baseUrl =

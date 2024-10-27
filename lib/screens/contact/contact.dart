@@ -1,10 +1,4 @@
-import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:lottie/lottie.dart';
-import 'package:portfolio/constants/common_assets.dart';
-import 'package:portfolio/theme/index.dart';
-import 'package:portfolio/utils/common_util.dart';
-import 'package:url_launcher/url_launcher.dart';
+import 'package:portfolio/imports.dart';
 
 class ContactMe extends StatelessWidget {
   const ContactMe({super.key});
@@ -30,7 +24,7 @@ class ContactMe extends StatelessWidget {
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       Text(
-                        'Contact',
+                        AppStrings.contact,
                         style: TextStyle(
                           fontSize: CommonUtil.scaleText(120.sp, context),
                           fontWeight: FontWeight.w900,
@@ -55,8 +49,7 @@ class ContactMe extends StatelessWidget {
                         text: TextSpan(
                           children: [
                             TextSpan(
-                              text:
-                                  "Do you have a project in mind? Want to hire me? or simply wanna chat? Feel free to ",
+                              text: AppStrings.contactmeText1,
                               style: Theme.of(context)
                                   .textTheme
                                   .displaySmall!
@@ -113,7 +106,7 @@ class ContactMe extends StatelessWidget {
                                   child: Stack(
                                     children: [
                                       Text(
-                                        "schedule a meeting",
+                                        "${AppStrings.schedule}",
                                         style: Theme.of(context)
                                             .textTheme
                                             .displaySmall!

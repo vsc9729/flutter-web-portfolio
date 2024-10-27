@@ -1,9 +1,4 @@
-import 'dart:async';
-
-import 'package:bloc/bloc.dart';
-import 'package:flutter/material.dart';
-import 'package:portfolio/repository/series_repo.dart';
-import 'package:portfolio/serializers/series_info.dart';
+import 'package:portfolio/imports.dart';
 
 part 'series_game_event.dart';
 part 'series_game_state.dart';
@@ -38,11 +33,9 @@ class SeriesGameBloc extends Bloc<SeriesGameEvent, SeriesGameState> {
         }
         return ValueNotifier(AnswerResponse.unanswered);
       });
-      print(seriesList.length);
       emit(SeriesGameDataReceivedState(score, highScore!));
     } else {
       seriesList.addAll((newSeries ?? []));
-      print(seriesList.length);
       emit(SeriesGameDataReceivedState(score, highScore!));
     }
   }
@@ -62,7 +55,6 @@ class SeriesGameBloc extends Bloc<SeriesGameEvent, SeriesGameState> {
       emit(SeriesGameDataReceivedState(score, highScore!));
     } else {
       isAnswered[event.index].value = AnswerResponse.wrong;
-      // emit(SeriesGameAnswerWrongState());
     }
   }
 
