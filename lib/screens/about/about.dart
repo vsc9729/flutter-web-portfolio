@@ -7,8 +7,8 @@ import 'package:lottie/lottie.dart';
 import 'package:neopop/widgets/buttons/neopop_button/neopop_button.dart';
 import 'package:portfolio/bloc/theme/theme_bloc.dart';
 import 'package:portfolio/constants/common_assets.dart';
-import 'package:portfolio/main.dart';
 import 'package:portfolio/screens/about/widgets/skill_tile.dart';
+import 'package:portfolio/screens/common/common_string.dart';
 import 'package:portfolio/theme/index.dart';
 import 'package:portfolio/utils/common_util.dart';
 import 'package:url_launcher/url_launcher.dart';
@@ -76,7 +76,7 @@ class _AboutMeState extends State<AboutMe> {
                   crossAxisAlignment: CrossAxisAlignment.end,
                   children: [
                     Text(
-                      "About Me",
+                      AppStrings.aboutME,
                       style: TextStyle(
                         fontSize: 70.h,
                         fontWeight: FontWeight.w800,
@@ -116,7 +116,7 @@ class _AboutMeState extends State<AboutMe> {
                 height: 12.h,
               ),
               Text(
-                'Software Engineer 2',
+                AppStrings.position,
                 style: TextStyle(
                   fontSize: 20.h,
                   fontWeight: FontWeight.w300,
@@ -129,7 +129,7 @@ class _AboutMeState extends State<AboutMe> {
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   Text(
-                    'GeekyAnts',
+                    AppStrings.companyName,
                     style: TextStyle(
                       fontSize: 20.h,
                       fontWeight: FontWeight.w300,
@@ -139,7 +139,7 @@ class _AboutMeState extends State<AboutMe> {
                     width: 5.sp,
                   ),
                   Image.network(
-                    "https://cdn-images-1.medium.com/max/1200/1*rSGF7OBUjv3Ac2kP_cSjtA.png",
+                    AppStrings.companyLogo,
                     height: 23.h,
                   ),
                 ],
@@ -186,8 +186,7 @@ class _AboutMeState extends State<AboutMe> {
         text: TextSpan(
           children: [
             TextSpan(
-              text:
-                  'A software engineer who aims to evolve, innovate, and inspire through technology.\n',
+              text: AppStrings.desc,
               style: Theme.of(context).textTheme.displaySmall!.copyWith(
                     fontSize: CommonUtil.scaleText(
                         MediaQuery.of(context).orientation ==
@@ -205,7 +204,7 @@ class _AboutMeState extends State<AboutMe> {
                   ),
             ),
             TextSpan(
-              text: '\nCurrently, I am working as a ',
+              text: AppStrings.desc2,
               style: Theme.of(context).textTheme.displaySmall!.copyWith(
                     fontFamily: AppFonts.poppins,
                     fontWeight: FontWeight.w400,
@@ -223,7 +222,7 @@ class _AboutMeState extends State<AboutMe> {
                   ),
             ),
             TextSpan(
-              text: 'Software Engineer',
+              text: AppStrings.desc3,
               style: Theme.of(context).textTheme.displaySmall!.copyWith(
                     fontFamily: AppFonts.poppins,
                     fontWeight: FontWeight.w600,
@@ -236,7 +235,7 @@ class _AboutMeState extends State<AboutMe> {
                   ),
             ),
             TextSpan(
-              text: ' at ',
+              text: AppStrings.desc4,
               style: Theme.of(context).textTheme.displaySmall!.copyWith(
                     fontFamily: AppFonts.poppins,
                     fontWeight: FontWeight.w400,
@@ -261,7 +260,7 @@ class _AboutMeState extends State<AboutMe> {
                     onTap: () {
                       launchUrl(
                         Uri.parse(
-                          'https://geekyants.com/',
+                          AppStrings.companyLink,
                         ),
                       );
                     },
@@ -279,7 +278,7 @@ class _AboutMeState extends State<AboutMe> {
                             Align(
                               alignment: Alignment.centerLeft,
                               child: Text(
-                                'GeekyAnts Pvt. Ltd.',
+                                AppStrings.companyLinkText,
                                 style: Theme.of(context)
                                     .textTheme
                                     .displaySmall!
@@ -325,8 +324,7 @@ class _AboutMeState extends State<AboutMe> {
               )
             ]),
             TextSpan(
-              text:
-                  "\nDuring my tenure, I've had the opportunity to contribute to a diverse range of projects, each presenting unique challenges and opportunities for growth.\n",
+              text: AppStrings.desc5,
               style: Theme.of(context).textTheme.displaySmall!.copyWith(
                     fontFamily: AppFonts.poppins,
                     fontWeight: FontWeight.w400,
@@ -344,8 +342,7 @@ class _AboutMeState extends State<AboutMe> {
                   ),
             ),
             TextSpan(
-              text:
-                  "\nOne notable project I've worked on is a cutting-edge dating app tailored for ",
+              text: AppStrings.desc6,
               style: Theme.of(context).textTheme.displaySmall!.copyWith(
                     fontFamily: AppFonts.poppins,
                     fontWeight: FontWeight.w400,
@@ -363,8 +360,7 @@ class _AboutMeState extends State<AboutMe> {
                   ),
             ),
             TextSpan(
-              text:
-                  "users in Germany. Collaborating closely with the team, I played a key role in architecting and developing features that enhance user experience and engagement.\n",
+              text: AppStrings.desc7,
               style: Theme.of(context).textTheme.displaySmall!.copyWith(
                     fontFamily: AppFonts.poppins,
                     fontWeight: FontWeight.w400,
@@ -382,8 +378,7 @@ class _AboutMeState extends State<AboutMe> {
                   ),
             ),
             TextSpan(
-                text:
-                    "\nAdditionally, I've had the privilege to contribute to a healthcare app developed for the Tata Group. This experience allowed me to delve into the complexities of healthcare technology, where I applied my technical prowess to create solutions that prioritize user privacy, security, and seamless functionality.\n",
+                text: AppStrings.desc8,
                 style: Theme.of(context).textTheme.displaySmall!.copyWith(
                       fontFamily: AppFonts.poppins,
                       fontWeight: FontWeight.w400,
@@ -403,7 +398,7 @@ class _AboutMeState extends State<AboutMe> {
                   ..onTap = () {
                     launchUrl(
                       Uri.parse(
-                        'https://www.linkedin.com/in/vikrant-singh-7b1b3b1a4/',
+                        AppStrings.linkedIn,
                       ),
                     );
                   })
@@ -422,8 +417,7 @@ class _AboutMeState extends State<AboutMe> {
             child: NeoPopButton(
               color: Theme.of(context).textTheme.displaySmall!.color!,
               onTapUp: () {
-                launchUrl(Uri.parse(
-                    "https://drive.google.com/file/d/1ppC4Mny_V5CIai3Pkce0KmPgzx4XdgO1/view?usp=drive_link"));
+                launchUrl(Uri.parse(AppStrings.resume));
               },
               rightShadowColor: Theme.of(context)
                   .textTheme
@@ -438,7 +432,7 @@ class _AboutMeState extends State<AboutMe> {
                   crossAxisAlignment: CrossAxisAlignment.center,
                   children: [
                     Text(
-                      "Resume",
+                      AppStrings.resumeText,
                       style: TextStyle(
                         fontSize: 15.h,
                         color: Theme.of(context).scaffoldBackgroundColor,
@@ -580,51 +574,51 @@ class BottomSkillsRow extends StatelessWidget {
         children: const [
           SkillTile(
             tileColor: Color(0xff00ADD8),
-            tileText: "Flutter",
+            tileText: AppStrings.flutter,
           ),
           SkillTile(
             tileColor: Color(0xff234A84),
-            tileText: "BLoC",
+            tileText: AppStrings.bloc,
           ),
           SkillTile(
             tileColor: Color(0xff61DAF6),
-            tileText: "Dart",
+            tileText: AppStrings.dart,
           ),
           SkillTile(
             tileColor: Color(0xffFF9900),
-            tileText: "GraphQL",
+            tileText: AppStrings.graphql,
           ),
           SkillTile(
             tileColor: Color(0xff4285F4),
-            tileText: "Android",
+            tileText: AppStrings.android,
           ),
           SkillTile(
             tileColor: Color(0xff326CE5),
-            tileText: "iOS",
+            tileText: AppStrings.ios,
           ),
           SkillTile(
             tileColor: Color(0xff0DB7ED),
-            tileText: "API Integration",
+            tileText: AppStrings.apiIntegration,
           ),
           SkillTile(
             tileColor: Color(0xff7B42BC),
-            tileText: "CI/CD",
+            tileText: AppStrings.ciCd,
           ),
           SkillTile(
             tileColor: Color(0xff199BFC),
-            tileText: "Provider",
+            tileText: AppStrings.provider,
           ),
           SkillTile(
             tileColor: Color(0xffD82C20),
-            tileText: "Firebase",
+            tileText: AppStrings.firebase,
           ),
           SkillTile(
             tileColor: Color(0xffE535AB),
-            tileText: "Git",
+            tileText: AppStrings.git,
           ),
           SkillTile(
             tileColor: Color(0xff68A063),
-            tileText: "MVVM",
+            tileText: AppStrings.mvvm,
           ),
         ],
       ),
