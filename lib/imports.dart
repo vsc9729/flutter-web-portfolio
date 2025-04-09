@@ -54,3 +54,4 @@ export 'package:portfolio/screens/mobile/widgets/top_bar.dart';
 export 'package:portfolio/screens/mobile/widgets/weather_widget.dart';
 export 'package:portfolio/screens/mobile/homescreen.dart';
 export 'package:portfolio/screens/about/bottom_skills.dart';
+export 'package:portfolio/screens/mobile/widgets/iframe_web_view.dart';

@@ -1,4 +1,5 @@
 import 'package:portfolio/imports.dart';
+import 'package:portfolio/screens/mobile/widgets/iframe_web_view.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({
@@ -101,8 +102,17 @@ class _HomeScreenState extends State<HomeScreen>
                             DeferPointer(
                               child: GestureDetector(
                                 onTap: () {
-                                  launchUrl(Uri.parse(
-                                      AppStrings.youtube));
+                                  Navigator.of(context).push(
+                                    PageRouteBuilder(
+                                      opaque: false,
+                                      pageBuilder: (context, animation, _) {
+                                        return IframeWebView(
+                                          url: AppStrings.youtube,
+                                          title: "YouTube",
+                                        );
+                                      },
+                                    ),
+                                  );
                                 },
                                 child: Container(
                                   height: 50.h,
@@ -122,9 +132,16 @@ class _HomeScreenState extends State<HomeScreen>
                             ),
                             GestureDetector(
                               onTap: () {
-                                launchUrl(
-                                  Uri.parse(
-                                    "https://github.com/vsc9729?tab=repositories",
+                                Navigator.of(context).push(
+                                  PageRouteBuilder(
+                                    opaque: false,
+                                    pageBuilder: (context, animation, _) {
+                                      return IframeWebView(
+                                        url:
+                                            "https://github.com/vsc9729?tab=repositories",
+                                        title: "GitHub",
+                                      );
+                                    },
                                   ),
                                 );
                               },
@@ -145,9 +162,16 @@ class _HomeScreenState extends State<HomeScreen>
                             ),
                             GestureDetector(
                               onTap: () {
-                                launchUrl(
-                                  Uri.parse(
-                                    "https://www.linkedin.com/in/vikrant-singh-2146ba1a1/",
+                                Navigator.of(context).push(
+                                  PageRouteBuilder(
+                                    opaque: false,
+                                    pageBuilder: (context, animation, _) {
+                                      return IframeWebView(
+                                        url:
+                                            "https://www.linkedin.com/in/vikrant-singh-2146ba1a1/",
+                                        title: "LinkedIn",
+                                      );
+                                    },
                                   ),
                                 );
                               },
@@ -168,9 +192,16 @@ class _HomeScreenState extends State<HomeScreen>
                             ),
                             GestureDetector(
                               onTap: () {
-                                launchUrl(
-                                  Uri.parse(
-                                    "https://www.hackerrank.com/profile/vsc_uiet",
+                                Navigator.of(context).push(
+                                  PageRouteBuilder(
+                                    opaque: false,
+                                    pageBuilder: (context, animation, _) {
+                                      return IframeWebView(
+                                        url:
+                                            "https://www.hackerrank.com/profile/vsc_uiet",
+                                        title: "HackerRank",
+                                      );
+                                    },
                                   ),
                                 );
                               },
@@ -326,9 +357,15 @@ class _HomeScreenState extends State<HomeScreen>
                               children: [
                                 GestureDetector(
                                   onTap: () {
-                                    launchUrl(
-                                      Uri.parse(
-                                        "https://github.com/vsc9729/flutter-web-portfolio",
+                                    Navigator.of(context).push(
+                                      PageRouteBuilder(
+                                        opaque: false,
+                                        pageBuilder: (context, animation, _) {
+                                          return IframeWebView(
+                                            url: "https://vikrantsingh.tech",
+                                            title: AppStrings.portfolio,
+                                          );
+                                        },
                                       ),
                                     );
                                   },
@@ -364,9 +401,16 @@ class _HomeScreenState extends State<HomeScreen>
                               children: [
                                 GestureDetector(
                                   onTap: () {
-                                    launchUrl(
-                                      Uri.parse(
-                                        "https://github.com/vsc9729/tawk-poc",
+                                    Navigator.of(context).push(
+                                      PageRouteBuilder(
+                                        opaque: false,
+                                        pageBuilder: (context, animation, _) {
+                                          return IframeWebView(
+                                            url:
+                                                "https://github.com/vsc9729/tawk-poc",
+                                            title: AppStrings.twak,
+                                          );
+                                        },
                                       ),
                                     );
                                   },

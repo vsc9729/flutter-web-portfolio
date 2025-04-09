@@ -39,7 +39,7 @@ class AppStrings {
   static const mvvm = 'MVVM';
   static const weatherURl = "https://api.openweathermap.org/data/2.5/weather";
   static const portfolio = "Portfolio";
-  static const githubLink = "https://github.com/vsc9729/flutter-web-portfolio";
+  static const githubLink = "https://vikrantsingh.tech";
   static const aboutPortfolio =
       "The portfolio website that you are currently on is made using Flutter and Dart. It is a responsive website that works on all devices. The website is hosted on Firebase Hosting. The website is made using the BLoC pattern.";
   static const gameText = "High Low Game";

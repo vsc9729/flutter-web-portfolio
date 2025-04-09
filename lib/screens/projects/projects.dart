@@ -1,4 +1,5 @@
 import 'package:portfolio/imports.dart';
+
 class Projects extends StatefulWidget {
   const Projects({super.key, required this.websitePageController});
   final PageController websitePageController;
@@ -257,7 +258,8 @@ class _ProjectsState extends State<Projects>
                                                                           10.sp,
                                                                     ),
                                                                     Text(
-                                                                      AppStrings.aboutPortfolio,
+                                                                      AppStrings
+                                                                          .aboutPortfolio,
                                                                       textAlign:
                                                                           TextAlign
                                                                               .left,
@@ -368,7 +370,8 @@ class _ProjectsState extends State<Projects>
                                                                               10.sp,
                                                                         ),
                                                                         Text(
-                                                                          AppStrings.gameDesc,
+                                                                          AppStrings
+                                                                              .gameDesc,
                                                                           textAlign:
                                                                               TextAlign.left,
                                                                           style:
@@ -474,7 +477,8 @@ class _ProjectsState extends State<Projects>
                                                                               10.sp,
                                                                         ),
                                                                         Text(
-                                                                          AppStrings.chatbotDesc,
+                                                                          AppStrings
+                                                                              .chatbotDesc,
                                                                           textAlign:
                                                                               TextAlign.left,
                                                                           style:
@@ -719,7 +723,7 @@ class _ProjectsState extends State<Projects>
                                                                             onTap:
                                                                                 () {
                                                                               launchUrl(Uri.parse(
-                                                                                "https://github.com/vsc9729/flutter-web-portfolio",
+                                                                                "https://vikrantsingh.tech",
                                                                               ));
                                                                             },
                                                                             child:
@@ -735,7 +739,8 @@ class _ProjectsState extends State<Projects>
                                                                             15.h,
                                                                       ),
                                                                       Text(
-                                                                        AppStrings.aboutPortfolio,
+                                                                        AppStrings
+                                                                            .aboutPortfolio,
                                                                         textAlign:
                                                                             TextAlign.left,
                                                                         style:
